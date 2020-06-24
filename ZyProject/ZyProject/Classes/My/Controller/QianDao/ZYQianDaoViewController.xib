@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYQianDaoViewController">
+            <connections>
+                <outlet property="QDBtn" destination="ww9-o4-AD5" id="pn6-MW-C82"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpI-aN-RtH" customClass="FSCalendar">
+                    <rect key="frame" x="15" y="56" width="384" height="290.5"/>
+                    <color key="backgroundColor" red="0.20898184180000001" green="0.21858990189999999" blue="0.23611778019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="290.5" id="mxM-ZA-z0I"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" red="0.87632519009999998" green="0.48113691809999998" blue="0.31622362139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="yyyy-MM-dd"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="i5M-Pr-FkT" id="4xi-uG-hM0"/>
+                        <outlet property="delegate" destination="i5M-Pr-FkT" id="ciU-Iu-PrS"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww9-o4-AD5">
+                    <rect key="frame" x="52" y="363.5" width="310" height="54"/>
+                    <state key="normal" image="btn_keqiandao"/>
+                    <connections>
+                        <action selector="QD:" destination="-1" eventType="touchUpInside" id="i0p-qu-g7U"/>
+                        <action selector="YiCi:" destination="-1" eventType="touchUpInside" id="pmx-ec-vZy"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到说明" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBZ-hP-ABT">
+                    <rect key="frame" x="0.0" y="440.5" width="414" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="bjU-fn-L4Y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="虚线" translatesAutoresizingMaskIntoConstraints="NO" id="EGx-6R-HQY">
+                    <rect key="frame" x="38.5" y="490.5" width="337" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="tkI-rX-xGm"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0b9-Gs-Nw1">
+                    <rect key="frame" x="38" y="517.5" width="338" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="mri-Uo-k0c"/>
+                    </constraints>
+                    <string key="text"> 签到说明:  
+1.以30天为一个签到周期，若中途断签后重新签到，则开始新的周期;
+2.每个签到周期获得的金币数会有不同;
+3.每日金币奖品数量有限，先到先得，领完即止。
+                            </string>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="0.17624327540000001" green="0.18619534369999999" blue="0.19977301359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="HBZ-hP-ABT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="2xJ-sh-NEi"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="EGx-6R-HQY" secondAttribute="trailing" constant="38.5" id="50Y-9k-9mb"/>
+                <constraint firstItem="wpI-aN-RtH" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="12" id="6O2-e2-LCL"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="0b9-Gs-Nw1" secondAttribute="trailing" constant="38" id="7th-pa-0Hd"/>
+                <constraint firstItem="HBZ-hP-ABT" firstAttribute="top" secondItem="ww9-o4-AD5" secondAttribute="bottom" constant="23" id="Gz3-f1-9tO"/>
+                <constraint firstItem="EGx-6R-HQY" firstAttribute="top" secondItem="HBZ-hP-ABT" secondAttribute="bottom" constant="29" id="H9H-rG-EeY"/>
+                <constraint firstItem="EGx-6R-HQY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="38.5" id="QA3-ff-TyY"/>
+                <constraint firstItem="wpI-aN-RtH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="R5y-In-RHL"/>
+                <constraint firstItem="0b9-Gs-Nw1" firstAttribute="top" secondItem="EGx-6R-HQY" secondAttribute="bottom" constant="26" id="SRT-tA-yj9"/>
+                <constraint firstItem="ww9-o4-AD5" firstAttribute="top" secondItem="wpI-aN-RtH" secondAttribute="bottom" constant="17" id="Xcs-da-quj"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wpI-aN-RtH" secondAttribute="trailing" constant="15" id="gYA-He-grt"/>
+                <constraint firstItem="HBZ-hP-ABT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gve-yv-Kgc"/>
+                <constraint firstItem="0b9-Gs-Nw1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="38" id="jtz-L4-6Ud"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="HBZ-hP-ABT" secondAttribute="trailing" id="rQR-FN-2zF"/>
+                <constraint firstItem="ww9-o4-AD5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yd5-tb-I3j"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="133" y="142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_keqiandao" width="309.5" height="53.5"/>
+        <image name="虚线" width="298" height="1"/>
+    </resources>
+</document>

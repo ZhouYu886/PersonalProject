@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PL" id="KGk-i7-Jjw" customClass="ZYPlTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="椭圆 2817" translatesAutoresizingMaskIntoConstraints="NO" id="BHL-xk-NUP">
+                        <rect key="frame" x="18.5" y="13.5" width="35" height="34.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="oUc-6v-uvI"/>
+                            <constraint firstAttribute="height" constant="34.5" id="oaj-2M-dON"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吃鱼鱼" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-Es-Dnz">
+                        <rect key="frame" x="60" y="17.5" width="100" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="nFP-wC-xTC"/>
+                            <constraint firstAttribute="width" constant="100" id="wla-er-nNX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.99997586009999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEE-cl-kKe">
+                        <rect key="frame" x="59.5" y="36.5" width="50" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="DoC-kj-Azp"/>
+                            <constraint firstAttribute="height" constant="12" id="Xls-Cx-dko"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.38276726010000001" green="0.38705211880000001" blue="0.39495480059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNi-34-bku">
+                        <rect key="frame" x="292" y="20" width="30" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="6Pk-Qy-WSh"/>
+                            <constraint firstAttribute="height" constant="15" id="EgX-BC-E8T"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title=" 24" image="ic_dianzan"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCB-Ug-xtI">
+                        <rect key="frame" x="327" y="20" width="28" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="B0z-Qj-edf"/>
+                            <constraint firstAttribute="height" constant="15" id="qOw-Td-XYu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title=" 18" image="ic_pinglun"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1I-gJ-71Z">
+                        <rect key="frame" x="17.5" y="95.5" width="340" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="篮球小将 回复 吃鱼鱼：老弟，稳！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqN-u2-EY7">
+                                <rect key="frame" x="10" y="15" width="330" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="hN9-rs-Pxh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.42392170429999998" green="0.42376682160000001" blue="0.4352766871" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17624327540000001" green="0.18619534369999999" blue="0.19977301359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cqN-u2-EY7" firstAttribute="centerY" secondItem="c1I-gJ-71Z" secondAttribute="centerY" id="4t9-VY-AUk"/>
+                            <constraint firstItem="cqN-u2-EY7" firstAttribute="leading" secondItem="c1I-gJ-71Z" secondAttribute="leading" constant="10" id="9MO-Oc-svt"/>
+                            <constraint firstAttribute="trailing" secondItem="cqN-u2-EY7" secondAttribute="trailing" id="YEA-D5-ALe"/>
+                            <constraint firstAttribute="height" constant="44.5" id="flY-AR-N6v"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输球了还笑，演员，给老子退钱！！！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N09-yD-SzI">
+                        <rect key="frame" x="18.5" y="67" width="338" height="18.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.541888535" green="0.54178053140000004" blue="0.54909729959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kNi-34-bku" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="2wF-VY-c0a"/>
+                    <constraint firstAttribute="trailing" secondItem="N09-yD-SzI" secondAttribute="trailing" constant="18.5" id="3Dy-lx-701"/>
+                    <constraint firstItem="VEE-cl-kKe" firstAttribute="top" secondItem="Ztb-Es-Dnz" secondAttribute="bottom" constant="1" id="3Fc-hB-bxZ"/>
+                    <constraint firstItem="lCB-Ug-xtI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="5qf-6z-jvk"/>
+                    <constraint firstItem="c1I-gJ-71Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17.5" id="7ee-92-nUC"/>
+                    <constraint firstItem="c1I-gJ-71Z" firstAttribute="top" secondItem="N09-yD-SzI" secondAttribute="bottom" constant="10" id="DWC-3Y-5K0"/>
+                    <constraint firstItem="VEE-cl-kKe" firstAttribute="leading" secondItem="BHL-xk-NUP" secondAttribute="trailing" constant="6" id="FXS-NZ-7fl"/>
+                    <constraint firstAttribute="trailing" secondItem="lCB-Ug-xtI" secondAttribute="trailing" constant="20" id="FuB-eb-AQt"/>
+                    <constraint firstItem="lCB-Ug-xtI" firstAttribute="leading" secondItem="kNi-34-bku" secondAttribute="trailing" constant="5" id="Hjg-qs-D5x"/>
+                    <constraint firstAttribute="trailing" secondItem="c1I-gJ-71Z" secondAttribute="trailing" constant="17.5" id="PPQ-cx-i8c"/>
+                    <constraint firstItem="N09-yD-SzI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.5" id="bPJ-a8-ko9"/>
+                    <constraint firstItem="N09-yD-SzI" firstAttribute="top" secondItem="VEE-cl-kKe" secondAttribute="bottom" constant="18.5" id="cXw-ol-JY5"/>
+                    <constraint firstAttribute="bottom" secondItem="c1I-gJ-71Z" secondAttribute="bottom" constant="10" id="fhN-RU-lx3"/>
+                    <constraint firstItem="BHL-xk-NUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.5" id="q7J-yH-UPq"/>
+                    <constraint firstItem="BHL-xk-NUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13.5" id="ql0-VY-Zp7"/>
+                    <constraint firstItem="Ztb-Es-Dnz" firstAttribute="leading" secondItem="BHL-xk-NUP" secondAttribute="trailing" constant="6.5" id="u0X-xa-E8l"/>
+                    <constraint firstItem="Ztb-Es-Dnz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17.5" id="zuW-Ff-fps"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.15220963949999999" green="0.1624073982" blue="0.1762966812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="MZ" destination="Ztb-Es-Dnz" id="AR5-qa-KvU"/>
+                <outlet property="PL" destination="N09-yD-SzI" id="Wzh-fZ-0db"/>
+                <outlet property="TX" destination="BHL-xk-NUP" id="cdi-j1-2zD"/>
+            </connections>
+            <point key="canvasLocation" x="132.60869565217394" y="140.625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_dianzan" width="11" height="11"/>
+        <image name="ic_pinglun" width="11" height="11"/>
+        <image name="椭圆 2817" width="35" height="35"/>
+    </resources>
+</document>

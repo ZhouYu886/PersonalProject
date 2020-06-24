@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XiangQing" rowHeight="411" id="KGk-i7-Jjw" customClass="ZYPingLunTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="691"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="691"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="徽商期货期权论坛——股指期权卖方策略风控必备工具与事前风控实务" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83m-Lv-d41">
+                        <rect key="frame" x="11" y="14" width="346" height="41"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="41" id="GZ6-3Z-9xI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="椭圆 2817" translatesAutoresizingMaskIntoConstraints="NO" id="70d-Rb-p6v">
+                        <rect key="frame" x="9.5" y="67.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="JfH-XF-Kpz"/>
+                            <constraint firstAttribute="width" constant="35" id="saD-e0-3el"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="常在河边走" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PK-JV-X4D">
+                        <rect key="frame" x="50.5" y="70.5" width="100" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="XSR-2M-eDS"/>
+                            <constraint firstAttribute="width" constant="100" id="gwp-yC-D9A"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发表于 12月23日  18:18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPL-5K-D4C">
+                        <rect key="frame" x="50" y="89" width="200" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="3eV-8T-Maa"/>
+                            <constraint firstAttribute="height" constant="12" id="I3d-jL-6Ag"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.36207491159999999" green="0.36640718579999998" blue="0.3743938208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-jJ-gdD">
+                        <rect key="frame" x="293" y="69" width="67.5" height="37.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37.5" id="0fa-9l-aIj"/>
+                            <constraint firstAttribute="width" constant="67.5" id="Vtr-ly-RaZ"/>
+                        </constraints>
+                        <state key="normal" image="btn_guanzhuciren"/>
+                        <state key="selected" image="btn_bukeguanzhuciren"/>
+                        <connections>
+                            <action selector="GuanZhu:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FHK-4Z-l6h"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-ft-MRu">
+                        <rect key="frame" x="20" y="641" width="74.5" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="MSG-yw-gr4"/>
+                            <constraint firstAttribute="width" constant="74.5" id="ads-o5-518"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="      12.6w" backgroundImage="pic_shoucang">
+                            <color key="titleColor" red="0.92287033799999996" green="0.41888612510000001" blue="0.54932016130000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlX-cw-J40">
+                        <rect key="frame" x="280.5" y="641" width="74.5" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="74.5" id="8sb-68-iLZ"/>
+                            <constraint firstAttribute="height" constant="30" id="gbY-rL-VyR"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="pic_fenxiang"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5v7-5b-Lgn">
+                        <rect key="frame" x="150.5" y="641" width="74.5" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="74.5" id="TcJ-Y5-EHG"/>
+                            <constraint firstAttribute="height" constant="30" id="iN1-p3-fm7"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="pic_buganxingqu"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-Ja-Jhe">
+                        <rect key="frame" x="10" y="121.5" width="355" height="363.5"/>
+                        <string key="text">今日郑糖放量走高，主力合约回到五千关口上方，但近期整理形态仍未打破。外糖走高、国内现货价格上调对郑糖上升起到推动作用。不过，目前无论期货还是现货糖价都大大高于进口糖成本，自5月22日起配额外进口糖恢复50%税率，至今白糖期货主力合约价格大约高出进口糖成本约千元，而5月6~21日的价差均值为约340元。近期外糖进口利润丰厚，郑糖涨幅估计会低于国际糖价的升幅。
+近期国际上因新冠疫情而被迫实施的封锁措施正逐渐解除，随着外出及聚会的人员增多，食糖消费形势也在恢复。此外，原油价格回升对糖价也有提振作用。还有，6月2日国际糖业组织（ISO）表示，2019/20年度全球食糖供应短缺930万吨，2020/21年度可能还会短缺690万吨。这个消息对于国际糖价有利多刺激。需要指出的是，以上预期未考虑新冠疫情对于食糖消费的影响。ISO也指出截至5月份已有210万吨的消费需求消失或延迟，且之后还会有更多的损失。由于2~5月份很多国家和地区都发布了禁行令，旅游、聚会、娱乐等活动大为减少，对于食糖的需求相应萎缩。前期不少业内机构认为将造成全球食糖消费减少5%，约为800万吨左右。如果确实如此，那么供需缺口不会像ISO预期的那样大。季增长约900万吨。如果巴西产糖增幅真能达到这样的水平，那么全球食糖供需不会存在缺口。
+但是，若巴西甘蔗制糖比例不能保持近期水平，那么最终食糖产量能否达到预期水平难以确定。而且，5月中旬以后巴西雷亚尔汇率止跌回升，对巴西食糖出口会有一定影响。还有，近期巴西新冠疫情形势严峻，不排除可能对食糖生产和出口造成影响。如果巴西食糖供应达不到预期的增幅，则对糖价会有利多作用。从技术上看，ICE原糖指数在临近12美分时可能遇阻，而10.6美分附近的支撑可能较为稳固。巴西产糖进度仍是影响糖价的关键性因素。今日国内现货糖价也有所上调，但销售情况并不明朗。根据目前的数据，5月份云南、广东食糖销量小幅增加，而广西、海南则有所减少。其中，广西食糖销量同比减少了16万吨，可能会完全抵消其他地区销量增幅。随着中小学校陆续复课，食糖消费有望进一步恢复，糖厂工业库存大概率继续低于近年来同期水平。这样，后期进口糖规模将成为影响国内供应及糖价的重要因素。虽然配额外进口糖关税税率下调，但目前进口利润与特别保障措施取消之前的最高值时期接近，对扩大外糖进口有刺激作用。所以，尽管外糖已有脱离底部区走高的迹象，但郑糖仍未出现突破走势。而且，若国外糖价上涨遇阻，郑糖向下调整的可能依然存在。所以，交易者可考虑进行白糖期权宽跨式套利，不论郑糖向哪个方向出现突破都有盈利的可能。
+（责任编辑：陈状 ）
+</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.39916437859999998" green="0.40341347459999999" blue="0.41125300529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5XW-Eo-mUA">
+                        <rect key="frame" x="67.5" y="493" width="240" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="240" id="RHg-Wc-5rD"/>
+                            <constraint firstAttribute="height" constant="128" id="a4g-Pl-iYM"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5v7-5b-Lgn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1sP-oO-tJP"/>
+                    <constraint firstItem="70d-Rb-p6v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9.5" id="6Ym-u3-7ag"/>
+                    <constraint firstItem="70d-Rb-p6v" firstAttribute="top" secondItem="83m-Lv-d41" secondAttribute="bottom" constant="12.5" id="BoX-gg-vz0"/>
+                    <constraint firstAttribute="trailing" secondItem="8bs-Ja-Jhe" secondAttribute="trailing" constant="10" id="HCg-EG-ICf"/>
+                    <constraint firstItem="3PK-JV-X4D" firstAttribute="top" secondItem="83m-Lv-d41" secondAttribute="bottom" constant="15.5" id="Hmm-UU-DXU"/>
+                    <constraint firstAttribute="trailing" secondItem="OlX-cw-J40" secondAttribute="trailing" constant="20" id="LbA-I8-Vzn"/>
+                    <constraint firstItem="jkd-jJ-gdD" firstAttribute="top" secondItem="83m-Lv-d41" secondAttribute="bottom" constant="14" id="LxZ-QR-bgz"/>
+                    <constraint firstItem="5XW-Eo-mUA" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="OYI-jA-v7s"/>
+                    <constraint firstAttribute="trailing" secondItem="83m-Lv-d41" secondAttribute="trailing" constant="18" id="Rwf-wu-2c7"/>
+                    <constraint firstAttribute="bottom" secondItem="5v7-5b-Lgn" secondAttribute="bottom" constant="20" id="Se1-g7-Ooi"/>
+                    <constraint firstItem="83m-Lv-d41" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="Tle-mz-kTB"/>
+                    <constraint firstItem="8bs-Ja-Jhe" firstAttribute="top" secondItem="jkd-jJ-gdD" secondAttribute="bottom" constant="15" id="U9h-Zo-TJu"/>
+                    <constraint firstItem="iPL-5K-D4C" firstAttribute="leading" secondItem="70d-Rb-p6v" secondAttribute="trailing" constant="5.5" id="Xgi-4s-4k7"/>
+                    <constraint firstAttribute="bottom" secondItem="OlX-cw-J40" secondAttribute="bottom" constant="20" id="bvn-kq-KN9"/>
+                    <constraint firstAttribute="trailing" secondItem="jkd-jJ-gdD" secondAttribute="trailing" constant="14.5" id="df1-p6-Feq"/>
+                    <constraint firstItem="3PK-JV-X4D" firstAttribute="leading" secondItem="70d-Rb-p6v" secondAttribute="trailing" constant="6" id="hWD-VQ-Qqp"/>
+                    <constraint firstItem="6DZ-ft-MRu" firstAttribute="top" secondItem="5XW-Eo-mUA" secondAttribute="bottom" constant="20" id="miU-qX-QIj"/>
+                    <constraint firstItem="8bs-Ja-Jhe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="nRA-TU-s2r"/>
+                    <constraint firstItem="5XW-Eo-mUA" firstAttribute="top" secondItem="8bs-Ja-Jhe" secondAttribute="bottom" constant="8" id="r6N-mO-Us3"/>
+                    <constraint firstItem="iPL-5K-D4C" firstAttribute="top" secondItem="3PK-JV-X4D" secondAttribute="bottom" constant="0.5" id="uz6-8Q-afd"/>
+                    <constraint firstAttribute="bottom" secondItem="6DZ-ft-MRu" secondAttribute="bottom" constant="20" id="wLN-lc-mSY"/>
+                    <constraint firstItem="83m-Lv-d41" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="xDf-uQ-7Tx"/>
+                    <constraint firstItem="6DZ-ft-MRu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xdj-a9-ipO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.17624327540000001" green="0.18619534369999999" blue="0.19977301359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="BT" destination="83m-Lv-d41" id="RpW-Yb-Epz"/>
+                <outlet property="GuanZhu" destination="jkd-jJ-gdD" id="7bN-sd-IiZ"/>
+                <outlet property="NR" destination="8bs-Ja-Jhe" id="1nB-0D-tIg"/>
+                <outlet property="Name" destination="3PK-JV-X4D" id="Zpk-JS-rmr"/>
+                <outlet property="TUp" destination="5XW-Eo-mUA" id="3gh-7Z-hZp"/>
+                <outlet property="TX" destination="70d-Rb-p6v" id="tsY-tG-CTN"/>
+            </connections>
+            <point key="canvasLocation" x="-77.536231884057983" y="183.81696428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="btn_bukeguanzhuciren" width="67.5" height="37.5"/>
+        <image name="btn_guanzhuciren" width="67.5" height="37.5"/>
+        <image name="pic_buganxingqu" width="74.5" height="30"/>
+        <image name="pic_fenxiang" width="74.5" height="30"/>
+        <image name="pic_shoucang" width="74.5" height="30"/>
+        <image name="椭圆 2817" width="35" height="35"/>
+    </resources>
+</document>

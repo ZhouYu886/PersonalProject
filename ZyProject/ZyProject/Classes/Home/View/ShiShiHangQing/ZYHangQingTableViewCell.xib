@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DingBu" id="KGk-i7-Jjw" customClass="ZYHangQingTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称/编码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1p-ca-8UY">
+                        <rect key="frame" x="30" y="13" width="66" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="0OH-ZU-pg3"/>
+                            <constraint firstAttribute="height" constant="18" id="3yN-67-HLl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="涨跌幅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9j-al-OVj">
+                        <rect key="frame" x="299" y="13" width="46" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="s87-OY-dfx"/>
+                            <constraint firstAttribute="height" constant="18" id="tjC-NI-kwZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQO-EX-RMJ">
+                        <rect key="frame" x="164.5" y="13" width="46" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="c80-Gc-QY2"/>
+                            <constraint firstAttribute="height" constant="18" id="fi2-1l-qQ3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FQO-EX-RMJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="2cr-tl-3HJ"/>
+                    <constraint firstAttribute="trailing" secondItem="e9j-al-OVj" secondAttribute="trailing" constant="30" id="Edg-So-bGW"/>
+                    <constraint firstItem="FQO-EX-RMJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gax-qI-eYu"/>
+                    <constraint firstItem="W1p-ca-8UY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="i2g-YK-dwl"/>
+                    <constraint firstItem="e9j-al-OVj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pqM-ZW-hvq"/>
+                    <constraint firstItem="W1p-ca-8UY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="uaL-gz-KPV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.17624327540000001" green="0.18619534369999999" blue="0.19977301359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="133" y="114"/>
+        </tableViewCell>
+    </objects>
+</document>

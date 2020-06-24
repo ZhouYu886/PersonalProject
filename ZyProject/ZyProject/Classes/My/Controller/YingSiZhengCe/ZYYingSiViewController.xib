@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYYingSiViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45v-JQ-GTH">
+                    <rect key="frame" x="23" y="66.5" width="368" height="733.5"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-wg-6Pz">
+                            <rect key="frame" x="0.0" y="0.0" width="368" height="733.5"/>
+                            <mutableString key="text"> 本应用尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，本应用会按照本隐私权政策的规定使用和披露您的个人信息。但本应用将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，本应用不会将这些信息对外披露或向第三方提供。本应用会不时更新本隐私权政策。 您在同意本应用服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于本应用服务使用协议不可分割的一部分。
+
+1. 适用范围
+
+(a) 在您注册本应用帐号时，您根据本应用要求提供的个人注册信息；
+
+(b) 在您使用本应用网络服务，或访问本应用平台网页时，本应用自动接收并记录的您的浏览器和计算机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据；
+
+(c) 本应用通过合法途径从商业伙伴处取得的用户个人数据。
+
+您了解并同意，以下信息不适用本隐私权政策：
+
+(a) 您在使用本应用平台提供的搜索服务时输入的关键字信息；
+
+(b) 本应用收集到的您在本应用发布的有关信息数据，包括但不限于参与活动、成交信息及评价详情；
+
+(c) 违反法律规定或违反本应用规则行为及本应用已对您采取的措施
+
+作者：yubooooooooo
+链接：https://www.jianshu.com/p/7b73ec61eb17
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+                            </mutableString>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cpX-wg-6Pz" firstAttribute="leading" secondItem="45v-JQ-GTH" secondAttribute="leading" id="1aB-2i-XLa"/>
+                        <constraint firstAttribute="bottom" secondItem="cpX-wg-6Pz" secondAttribute="bottom" id="F9B-uD-UaF"/>
+                        <constraint firstAttribute="trailing" secondItem="cpX-wg-6Pz" secondAttribute="trailing" id="KaY-ew-HLh"/>
+                        <constraint firstItem="cpX-wg-6Pz" firstAttribute="top" secondItem="45v-JQ-GTH" secondAttribute="top" id="jqd-fk-59d"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.17624327540000001" green="0.18619534369999999" blue="0.19977301359999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="45v-JQ-GTH" secondAttribute="trailing" constant="23" id="CaV-FY-Jxn"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="45v-JQ-GTH" secondAttribute="bottom" constant="62" id="JzG-PI-OJT"/>
+                <constraint firstItem="45v-JQ-GTH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="23" id="K8J-Dd-svI"/>
+                <constraint firstItem="45v-JQ-GTH" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="22.5" id="MHy-Hh-M66"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="132" y="142"/>
+        </view>
+    </objects>
+</document>
