@@ -10,7 +10,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYRiLiViewController">
             <connections>
                 <outlet property="TabelView" destination="Q4f-W2-sgW" id="KHr-OE-fQR"/>
-                <outlet property="calendar" destination="0IR-5c-W6p" id="HuI-Wz-7sI"/>
                 <outlet property="calendarHeightConstraint" destination="i5M-Pr-FkT" id="U2m-1j-WvX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,50 +20,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q4f-W2-sgW">
-                    <rect key="frame" x="0.0" y="167" width="414" height="695"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IR-5c-W6p" customClass="FSCalendar">
-                    <rect key="frame" x="0.0" y="44" width="414" height="123"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="123" id="hmC-jz-eWG"/>
-                    </constraints>
-                    <viewLayoutGuide key="safeArea" id="rFD-Q1-qhH"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="headerDateFormat" value="yyyy-MM-dd"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                            <color key="value" red="0.74924147129999996" green="0.45826983449999997" blue="0.34042268990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
-                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
-                            <real key="value" value="0.0"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
-                            <color key="value" red="0.87632519009999998" green="0.48113691809999998" blue="0.31622362139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.18097776169999999" green="0.19082838299999999" blue="0.20876991750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="Q4f-W2-sgW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="PNi-7T-FqI"/>
-                <constraint firstItem="0IR-5c-W6p" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Pr0-dt-4cL"/>
-                <constraint firstItem="0IR-5c-W6p" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="XgG-R5-pVV"/>
-                <constraint firstItem="Q4f-W2-sgW" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="c4J-IU-RLB"/>
-                <constraint firstItem="0IR-5c-W6p" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="fMJ-gI-52Y"/>
-                <constraint firstItem="Q4f-W2-sgW" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="toa-5N-PHl"/>
-                <constraint firstItem="Q4f-W2-sgW" firstAttribute="top" secondItem="0IR-5c-W6p" secondAttribute="bottom" id="vRF-k7-Epu"/>
+                <constraint firstItem="Q4f-W2-sgW" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="3tc-FH-LyO"/>
+                <constraint firstItem="Q4f-W2-sgW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Nvy-PE-jPE"/>
+                <constraint firstItem="Q4f-W2-sgW" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="cIm-Me-24y"/>
+                <constraint firstItem="Q4f-W2-sgW" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="oDr-aP-6pI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>

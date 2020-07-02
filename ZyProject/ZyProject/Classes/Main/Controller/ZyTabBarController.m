@@ -27,7 +27,7 @@
     [self add];
 //    设置tabbar的字体颜色
 //    self.tabBar.tintColor = [UIColor colorWithRed:242 / 255.0 green:202 / 255.0 blue:140 / 255.0 alpha:1];
-    
+        
     self.delegate = self;
 
 }
@@ -68,6 +68,7 @@
         
         //    设置tabbar的背景颜色
         [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+//          [[UITabBar appearance] setBarTintColor:RGB(44, 48, 52)];
     //    设置tabbar的字体颜色
             self.tabBar.tintColor = [UIColor colorWithRed:242 / 255.0 green:202 / 255.0 blue:140 / 255.0 alpha:1];
     

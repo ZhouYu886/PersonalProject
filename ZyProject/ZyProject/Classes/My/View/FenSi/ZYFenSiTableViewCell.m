@@ -7,9 +7,20 @@
 //
 
 #import "ZYFenSiTableViewCell.h"
+#import "userModel.h"
+#import <MJExtension/MJExtension.h>
+#import <SDWebImage.h>
+
 
 @interface ZYFenSiTableViewCell()
 @property (weak, nonatomic) IBOutlet UIButton *GuanZHu;
+@property (weak, nonatomic) IBOutlet UIImageView *TXImage;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *DT;
+@property (weak, nonatomic) IBOutlet UILabel *FS;
+@property (nonatomic, strong) NSArray *GuanZhuArry;
+
+
 
 @end
 
@@ -18,14 +29,21 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+ 
+    self.TXImage.layer.cornerRadius = 25.5;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+-(void)setUM:(userModel *)UM
+{
+    _UM = UM;
+    self.NameLabel.text = UM.nickName;
+    self.DT.text = [NSString stringWithFormat:@"%@",UM.talkCount];
+    self.FS.text = [NSString stringWithFormat:@"%@",UM.fansCount];
+        [self.TXImage sd_setImageWithURL:[NSURL URLWithString:_UM.head] placeholderImage:nil];
 }
+
+
 - (IBAction)GuanZhu:(UIButton *)sender
 {
     self.GuanZHu.selected = !self.GuanZHu.selected;
@@ -38,5 +56,7 @@
        }
     
 }
+
+
 
 @end

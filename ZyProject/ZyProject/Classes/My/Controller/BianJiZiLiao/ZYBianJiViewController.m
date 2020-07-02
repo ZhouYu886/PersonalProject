@@ -10,23 +10,57 @@
 #import "ZYNiChengViewController.h"
 #import "ZYBJXbViewController.h"
 #import <BRPickerView.h>
+#import "ZYSelectPhotoManager.h"
+#import "ZYNameModel.h"
+#import "ZYGxQmViewController.h"
+#import "ZYGxQmModel.h"
+#import "ZYDengluViewController.h"
 
-@interface ZYBianJiViewController ()
+
+@interface ZYBianJiViewController ()<ZyNameVCDelegate,ZYselectPhotoDelegate,ZYQmDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *gxqm;
 @property (weak, nonatomic) IBOutlet UIView *NiChengView;
 @property (weak, nonatomic) IBOutlet UIView *XingBieView;
 @property (weak, nonatomic) IBOutlet UIView *ShengRiView;
 @property (weak, nonatomic) IBOutlet UIView *GXQMView;
 @property (weak, nonatomic) IBOutlet UIView *TuiChuDengLu;
-
+@property (weak, nonatomic) IBOutlet UIImageView *TxImage;
+@property (nonatomic,strong)ZYSelectPhotoManager *photoManger;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+@property(nonatomic, strong)ZYNameModel *nichengM;
+//@property(nonatomic, strong)ZYGxQmModel *GXQM;
 
 @end
 
 @implementation ZYBianJiViewController
 
-- (void)viewWillAppear:(BOOL)animated
-{
-     self.navigationController.navigationBar.hidden = NO;
+- (void)viewWillAppear:(BOOL)animated{
+    [self bianji];
+    self.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
+    
+//    self.navigationController.navigationBar.opaque = YES;
     self.navigationController.navigationBar.translucent = NO;
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+
+  self.tabBarController.tabBar.hidden = NO;
+
+}
+
+
+-(void)bianji
+{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    if([userDefault objectForKey:@"id"]){
+        self.gxqm.text = [NSString stringWithFormat:@"%@",[userDefault objectForKey:@"signature"]];
+    self.NameLabel.text = [NSString stringWithFormat:@"%@",[userDefault objectForKey:@"nickName"]];
+    NSData *data = [userDefault objectForKey:@"headerImage"];
+    self.TxImage.image = [UIImage imageWithData:data];
+        
+    } 
 }
 
 
@@ -35,12 +69,13 @@
     
     //设置界面标题
     self.title = @"编辑资料";
-    
+        
        //    设置导航条标题颜色
           [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
           self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+    self.TxImage.layer.cornerRadius = 51;
     
-          
       //设置导航栏颜色
        self.navigationController.navigationBar.barTintColor = RGB(44, 48, 52);
     
@@ -51,6 +86,7 @@
      //适应大小
      [btn sizeToFit];
      self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    
     
     //添加点击方法昵称
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(NiChengViewPush)];
@@ -91,12 +127,40 @@
     self.TuiChuDengLu.userInteractionEnabled = YES;
     //imagePush添加到tap中
     [self.TuiChuDengLu addGestureRecognizer:tapD];
+    
 }
+
+- (IBAction)HuanTouXiang:(UIButton *)sender
+{
+    if (!_photoManger) {
+        _photoManger =[[ZYSelectPhotoManager alloc]init];
+    }
+    [_photoManger startSelectPhotoWithImageName:@"选择头像"];
+    __weak typeof(self)mySelf=self;
+    //选取照片成功
+    _photoManger.successHandle=^(ZYSelectPhotoManager *manager,UIImage *image){
+        mySelf.TxImage.image = image;
+        //保存到本地
+        NSData *data = UIImagePNGRepresentation(image);
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"headerImage"];
+    };
+}
+
+
 
 -(void)NiChengViewPush
 {
     ZYNiChengViewController *NiChen = [[ZYNiChengViewController alloc]init];
+    NiChen.delegate = self;
     [self presentViewController:NiChen animated:YES completion:nil];
+    
+}
+
+-(void)GXQMViewpush
+{
+    ZYGxQmViewController *gxqm = [ZYGxQmViewController new];
+    gxqm.delegate = self;
+    [self presentViewController:gxqm animated:YES completion:nil];
     
 }
 
@@ -128,28 +192,72 @@
     customStyle.pickerTextColor = [UIColor redColor];
     customStyle.separatorColor = [UIColor redColor];
     datePickerView.pickerStyle = customStyle;
-
+    
     // 3.显示
     [datePickerView show];
     
     
 }
 
--(void)GXQMViewpush
+-(void)GainichengViewController:(ZYNiChengViewController *)VC NichengModel:(ZYNameModel *)ContactModel;
 {
-    
+    self.NameLabel.text = ContactModel.name;
 }
+
 
 -(void)TuiChuDengLuPush
 {
+    UIAlertController *aletVC  = [UIAlertController alertControllerWithTitle:@"退出的话，下次将重新登录" message:@"确定要退出吗" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    //第2步:创建按钮
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        //点击按钮执行的代码
+    }];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:( UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+        //点击按钮执行的代码
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        [userDefault removeObjectForKey:@"phone"];
+        [userDefault removeObjectForKey:@"id"];
+        [userDefault removeObjectForKey:@"password"];
+        ZYDengluViewController *Dl = [ZYDengluViewController new];
+        self.navigationController.navigationBar.hidden = YES;
+        [self.navigationController pushViewController:Dl animated:YES];
+        
+        
+//        if (self.didSureBtnBlock) {
+//            self.didSureBtnBlock();
+//        }
+    }];
+    //第3步:添加按钮
+    [aletVC addAction:action1];
+    [aletVC addAction:action2];
+    //第4步:显示弹框（相当于show操作）
+    [self presentViewController:aletVC animated:YES
+                     completion:nil];
     
 }
+
+
+
+-(void)GaiGXqmViewController:(ZYGxQmViewController *)VC GxQmModel:(ZYGxQmModel *)gxqmM
+{
+    self.gxqm.text = gxqmM.name;
+}
+
+//-(void)GaiGXqmViewController:(ZYGxQmViewController *)VC GxQmModel:(ZYGxQmModel *)gxqmM
+//{
+//    self.gxqm.text = gxqmM.name;
+//}
+
+
+
+
 
 //左边返回
 -(void)leftClick
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 
 @end

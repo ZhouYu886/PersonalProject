@@ -127,7 +127,7 @@
                     <state key="normal" image="ic_bukejian"/>
                     <state key="selected" image="ic_bukejian"/>
                     <connections>
-                        <action selector="YangJing:" destination="-1" eventType="touchUpInside" id="6cx-jZ-3YB"/>
+                        <action selector="YangJing:" destination="-1" eventType="touchUpInside" id="CtA-hs-l7z"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAG-BX-AJV">

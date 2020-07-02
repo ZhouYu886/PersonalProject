@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *NR;
 @property (weak, nonatomic) IBOutlet UIImageView *TUp;
 
+@property (weak, nonatomic) IBOutlet UIButton *BUXiHuan;
+
 @end
 
 @implementation ZYPingLunTableViewCell

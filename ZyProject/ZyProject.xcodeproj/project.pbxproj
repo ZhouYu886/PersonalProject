@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181674DA24A88F6E00A21358 /* ZYGxQmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181674D824A88F6E00A21358 /* ZYGxQmModel.m */; };
+		181674DB24A88F6E00A21358 /* ZYNameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181674D924A88F6E00A21358 /* ZYNameModel.m */; };
 		181CC1BE24A18DE1001F33C7 /* ZYHangYeFBM.m in Sources */ = {isa = PBXBuildFile; fileRef = 181CC1BD24A18DE1001F33C7 /* ZYHangYeFBM.m */; };
 		181CC1C224A19226001F33C7 /* ZYHyFbXqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181CC1C024A19226001F33C7 /* ZYHyFbXqViewController.m */; };
 		181CC1C324A19226001F33C7 /* ZYHyFbXqViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181CC1C124A19226001F33C7 /* ZYHyFbXqViewController.xib */; };
@@ -44,6 +46,8 @@
 		181CE546249A14D6002325A3 /* ZYDibuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181CE544249A14D6002325A3 /* ZYDibuTableViewCell.xib */; };
 		181CE54A249A1C2D002325A3 /* ZYDIbuWuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181CE548249A1C2D002325A3 /* ZYDIbuWuTableViewCell.m */; };
 		181CE54B249A1C2D002325A3 /* ZYDIbuWuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181CE549249A1C2D002325A3 /* ZYDIbuWuTableViewCell.xib */; };
+		182A3D1F24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182A3D1D24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.m */; };
+		182A3D2024AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182A3D1E24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.xib */; };
 		182C68F92498568C00E6F771 /* ZYReBangTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C68F72498568C00E6F771 /* ZYReBangTableViewCell.m */; };
 		182C68FA2498568C00E6F771 /* ZYReBangTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182C68F82498568C00E6F771 /* ZYReBangTableViewCell.xib */; };
 		182C68FE24985B1D00E6F771 /* ZYTuiJianTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C68FC24985B1D00E6F771 /* ZYTuiJianTableViewCell.m */; };
@@ -128,6 +132,10 @@
 		183C96EF249772AB00D23AD2 /* ZYBiXiangQingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183C96ED249772AB00D23AD2 /* ZYBiXiangQingTableViewCell.xib */; };
 		183C96F324977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C96F124977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.m */; };
 		183C96F424977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183C96F224977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.xib */; };
+		1860DB5A24A98196003B257B /* ZYGxQmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860DB5824A98196003B257B /* ZYGxQmViewController.m */; };
+		1860DB5B24A98196003B257B /* ZYGxQmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860DB5924A98196003B257B /* ZYGxQmViewController.xib */; };
+		1860DB5E24A9D257003B257B /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860DB5D24A9D257003B257B /* NetworkTool.swift */; };
+		1860DB6124A9EE27003B257B /* ZYShouYeM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860DB6024A9EE27003B257B /* ZYShouYeM.m */; };
 		18878E76249C4CEF004104B0 /* ZYYingSiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18878E74249C4CEF004104B0 /* ZYYingSiViewController.m */; };
 		18878E77249C4CEF004104B0 /* ZYYingSiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18878E75249C4CEF004104B0 /* ZYYingSiViewController.xib */; };
 		18878E7C249C5183004104B0 /* ZYDengluViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18878E7A249C5183004104B0 /* ZYDengluViewController.m */; };
@@ -138,6 +146,11 @@
 		18878E88249C8324004104B0 /* ZYQianDaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18878E86249C8324004104B0 /* ZYQianDaoViewController.xib */; };
 		18878E8C249C87BC004104B0 /* ZYQDCGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18878E8A249C87BC004104B0 /* ZYQDCGViewController.m */; };
 		18878E8D249C87BC004104B0 /* ZYQDCGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18878E8B249C87BC004104B0 /* ZYQDCGViewController.xib */; };
+		1889DA3324AAD79F00817888 /* ZYFenSiDTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1889DA3124AAD79F00817888 /* ZYFenSiDTViewController.m */; };
+		1889DA3424AAD79F00817888 /* ZYFenSiDTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889DA3224AAD79F00817888 /* ZYFenSiDTViewController.xib */; };
+		1889DA3724AADD3000817888 /* ZYTaRenDtHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1889DA3624AADD3000817888 /* ZYTaRenDtHeader.m */; };
+		1889DA3924AADD3E00817888 /* ZYTaRenDtHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889DA3824AADD3E00817888 /* ZYTaRenDtHeader.xib */; };
+		1889DA3C24AB33FC00817888 /* ZYFenSiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1889DA3B24AB33FC00817888 /* ZYFenSiModel.m */; };
 		18AADE98249358F5008BDACE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADE97249358F5008BDACE /* AppDelegate.m */; };
 		18AADE9E249358F5008BDACE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADE9D249358F5008BDACE /* ViewController.m */; };
 		18AADEA1249358F5008BDACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AADE9F249358F5008BDACE /* Main.storyboard */; };
@@ -152,6 +165,11 @@
 		18D8460924A03DE200B650BD /* ZYZiXunJingXuanM.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D8460824A03DE200B650BD /* ZYZiXunJingXuanM.m */; };
 		18D8461024A05AF400B650BD /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D8460D24A05AF400B650BD /* NSObject+YYModel.m */; };
 		18D8461124A05AF400B650BD /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D8460E24A05AF400B650BD /* YYClassInfo.m */; };
+		18E5972824A2E43900C7CA79 /* YXCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5972224A2E43900C7CA79 /* YXCalendarView.m */; };
+		18E5972924A2E43900C7CA79 /* YXMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5972324A2E43900C7CA79 /* YXMonthView.m */; };
+		18E5972A24A2E43900C7CA79 /* YXDateHelpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5972424A2E43900C7CA79 /* YXDateHelpObject.m */; };
+		18E5972B24A2E43900C7CA79 /* YXDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5972524A2E43900C7CA79 /* YXDayCell.m */; };
+		18E5972C24A2E43900C7CA79 /* YXDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5972624A2E43900C7CA79 /* YXDayCell.xib */; };
 		18F81AC7249DF898000B220A /* YKLineChartViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F81A76249DF898000B220A /* YKLineChartViewBase.m */; };
 		18F81AC8249DF898000B220A /* YKLineDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F81A77249DF898000B220A /* YKLineDataSet.m */; };
 		18F81AC9249DF898000B220A /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F81A78249DF898000B220A /* NetWork.m */; };
@@ -197,6 +215,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181674D624A88F6D00A21358 /* ZYNameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYNameModel.h; sourceTree = "<group>"; };
+		181674D724A88F6E00A21358 /* ZYGxQmModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYGxQmModel.h; sourceTree = "<group>"; };
+		181674D824A88F6E00A21358 /* ZYGxQmModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYGxQmModel.m; sourceTree = "<group>"; };
+		181674D924A88F6E00A21358 /* ZYNameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYNameModel.m; sourceTree = "<group>"; };
 		181CC1BC24A18DE1001F33C7 /* ZYHangYeFBM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYHangYeFBM.h; sourceTree = "<group>"; };
 		181CC1BD24A18DE1001F33C7 /* ZYHangYeFBM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYHangYeFBM.m; sourceTree = "<group>"; };
 		181CC1BF24A19226001F33C7 /* ZYHyFbXqViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYHyFbXqViewController.h; sourceTree = "<group>"; };
@@ -256,6 +278,9 @@
 		181CE547249A1C2D002325A3 /* ZYDIbuWuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYDIbuWuTableViewCell.h; sourceTree = "<group>"; };
 		181CE548249A1C2D002325A3 /* ZYDIbuWuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYDIbuWuTableViewCell.m; sourceTree = "<group>"; };
 		181CE549249A1C2D002325A3 /* ZYDIbuWuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYDIbuWuTableViewCell.xib; sourceTree = "<group>"; };
+		182A3D1C24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYQieHuanZhangHaoViewController.h; sourceTree = "<group>"; };
+		182A3D1D24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYQieHuanZhangHaoViewController.m; sourceTree = "<group>"; };
+		182A3D1E24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYQieHuanZhangHaoViewController.xib; sourceTree = "<group>"; };
 		182C68F62498568C00E6F771 /* ZYReBangTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYReBangTableViewCell.h; sourceTree = "<group>"; };
 		182C68F72498568C00E6F771 /* ZYReBangTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYReBangTableViewCell.m; sourceTree = "<group>"; };
 		182C68F82498568C00E6F771 /* ZYReBangTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYReBangTableViewCell.xib; sourceTree = "<group>"; };
@@ -389,6 +414,13 @@
 		183C96F024977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYZiXunJingXuanTableViewCell.h; sourceTree = "<group>"; };
 		183C96F124977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYZiXunJingXuanTableViewCell.m; sourceTree = "<group>"; };
 		183C96F224977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYZiXunJingXuanTableViewCell.xib; sourceTree = "<group>"; };
+		1860DB5724A98196003B257B /* ZYGxQmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYGxQmViewController.h; sourceTree = "<group>"; };
+		1860DB5824A98196003B257B /* ZYGxQmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYGxQmViewController.m; sourceTree = "<group>"; };
+		1860DB5924A98196003B257B /* ZYGxQmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYGxQmViewController.xib; sourceTree = "<group>"; };
+		1860DB5C24A9D257003B257B /* ZyProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZyProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		1860DB5D24A9D257003B257B /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		1860DB5F24A9EE27003B257B /* ZYShouYeM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYShouYeM.h; sourceTree = "<group>"; };
+		1860DB6024A9EE27003B257B /* ZYShouYeM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYShouYeM.m; sourceTree = "<group>"; };
 		18878E73249C4CEF004104B0 /* ZYYingSiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYYingSiViewController.h; sourceTree = "<group>"; };
 		18878E74249C4CEF004104B0 /* ZYYingSiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYYingSiViewController.m; sourceTree = "<group>"; };
 		18878E75249C4CEF004104B0 /* ZYYingSiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYYingSiViewController.xib; sourceTree = "<group>"; };
@@ -404,6 +436,14 @@
 		18878E89249C87BC004104B0 /* ZYQDCGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYQDCGViewController.h; sourceTree = "<group>"; };
 		18878E8A249C87BC004104B0 /* ZYQDCGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYQDCGViewController.m; sourceTree = "<group>"; };
 		18878E8B249C87BC004104B0 /* ZYQDCGViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYQDCGViewController.xib; sourceTree = "<group>"; };
+		1889DA3024AAD79F00817888 /* ZYFenSiDTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYFenSiDTViewController.h; sourceTree = "<group>"; };
+		1889DA3124AAD79F00817888 /* ZYFenSiDTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYFenSiDTViewController.m; sourceTree = "<group>"; };
+		1889DA3224AAD79F00817888 /* ZYFenSiDTViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYFenSiDTViewController.xib; sourceTree = "<group>"; };
+		1889DA3524AADD3000817888 /* ZYTaRenDtHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYTaRenDtHeader.h; sourceTree = "<group>"; };
+		1889DA3624AADD3000817888 /* ZYTaRenDtHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYTaRenDtHeader.m; sourceTree = "<group>"; };
+		1889DA3824AADD3E00817888 /* ZYTaRenDtHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYTaRenDtHeader.xib; sourceTree = "<group>"; };
+		1889DA3A24AB33FC00817888 /* ZYFenSiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYFenSiModel.h; sourceTree = "<group>"; };
+		1889DA3B24AB33FC00817888 /* ZYFenSiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYFenSiModel.m; sourceTree = "<group>"; };
 		18AADE93249358F5008BDACE /* ZyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AADE96249358F5008BDACE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18AADE97249358F5008BDACE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -431,6 +471,15 @@
 		18D8460D24A05AF400B650BD /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		18D8460E24A05AF400B650BD /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		18D8460F24A05AF400B650BD /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		18E5971F24A2E43900C7CA79 /* YXDateHelpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDateHelpObject.h; sourceTree = "<group>"; };
+		18E5972024A2E43900C7CA79 /* YXMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMonthView.h; sourceTree = "<group>"; };
+		18E5972124A2E43900C7CA79 /* YXDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDayCell.h; sourceTree = "<group>"; };
+		18E5972224A2E43900C7CA79 /* YXCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCalendarView.m; sourceTree = "<group>"; };
+		18E5972324A2E43900C7CA79 /* YXMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMonthView.m; sourceTree = "<group>"; };
+		18E5972424A2E43900C7CA79 /* YXDateHelpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDateHelpObject.m; sourceTree = "<group>"; };
+		18E5972524A2E43900C7CA79 /* YXDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDayCell.m; sourceTree = "<group>"; };
+		18E5972624A2E43900C7CA79 /* YXDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXDayCell.xib; sourceTree = "<group>"; };
+		18E5972724A2E43900C7CA79 /* YXCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCalendarView.h; sourceTree = "<group>"; };
 		18F81A76249DF898000B220A /* YKLineChartViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLineChartViewBase.m; sourceTree = "<group>"; };
 		18F81A77249DF898000B220A /* YKLineDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLineDataSet.m; sourceTree = "<group>"; };
 		18F81A78249DF898000B220A /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
@@ -590,6 +639,8 @@
 		181CE5282499DF4F002325A3 /* FaBu */ = {
 			isa = PBXGroup;
 			children = (
+				1860DB5D24A9D257003B257B /* NetworkTool.swift */,
+				1860DB5C24A9D257003B257B /* ZyProject-Bridging-Header.h */,
 				181CE5292499DF77002325A3 /* ZYFaBuViewController.h */,
 				181CE52A2499DF77002325A3 /* ZYFaBuViewController.m */,
 				181CE52B2499DF77002325A3 /* ZYFaBuViewController.xib */,
@@ -729,6 +780,9 @@
 				1833E97D249B5EF9003B2378 /* ZYBJXbViewController.h */,
 				1833E97E249B5EF9003B2378 /* ZYBJXbViewController.m */,
 				1833E97F249B5EF9003B2378 /* ZYBJXbViewController.xib */,
+				1860DB5724A98196003B257B /* ZYGxQmViewController.h */,
+				1860DB5824A98196003B257B /* ZYGxQmViewController.m */,
+				1860DB5924A98196003B257B /* ZYGxQmViewController.xib */,
 			);
 			path = BianJiZiLiao;
 			sourceTree = "<group>";
@@ -769,6 +823,9 @@
 				18363B7D249CBD2800448116 /* ZYFenSiViewController.h */,
 				18363B7E249CBD2800448116 /* ZYFenSiViewController.m */,
 				18363B7F249CBD2800448116 /* ZYFenSiViewController.xib */,
+				1889DA3024AAD79F00817888 /* ZYFenSiDTViewController.h */,
+				1889DA3124AAD79F00817888 /* ZYFenSiDTViewController.m */,
+				1889DA3224AAD79F00817888 /* ZYFenSiDTViewController.xib */,
 			);
 			path = FenSi;
 			sourceTree = "<group>";
@@ -779,6 +836,9 @@
 				18363B83249CBD7400448116 /* ZYFenSiTableViewCell.h */,
 				18363B84249CBD7400448116 /* ZYFenSiTableViewCell.m */,
 				18363B85249CBD7400448116 /* ZYFenSiTableViewCell.xib */,
+				1889DA3524AADD3000817888 /* ZYTaRenDtHeader.h */,
+				1889DA3624AADD3000817888 /* ZYTaRenDtHeader.m */,
+				1889DA3824AADD3E00817888 /* ZYTaRenDtHeader.xib */,
 			);
 			path = FenSi;
 			sourceTree = "<group>";
@@ -814,6 +874,7 @@
 		183C968A249723CA00D23AD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				182C68FB24985B1D00E6F771 /* ZYTuiJianTableViewCell.h */,
 				182C69002498659400E6F771 /* ZYZiXunTableViewCell.h */,
 				182C69012498659400E6F771 /* ZYZiXunTableViewCell.m */,
 				182C69022498659400E6F771 /* ZYZiXunTableViewCell.xib */,
@@ -945,6 +1006,9 @@
 				18AADED124936779008BDACE /* ZYMyViewController.h */,
 				18AADED224936779008BDACE /* ZYMyViewController.m */,
 				18AADED324936779008BDACE /* ZYMyViewController.xib */,
+				182A3D1C24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.h */,
+				182A3D1D24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.m */,
+				182A3D1E24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -952,6 +1016,10 @@
 		18AADEB124935C82008BDACE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				181674D724A88F6E00A21358 /* ZYGxQmModel.h */,
+				181674D824A88F6E00A21358 /* ZYGxQmModel.m */,
+				181674D624A88F6D00A21358 /* ZYNameModel.h */,
+				181674D924A88F6E00A21358 /* ZYNameModel.m */,
 				18F81AF6249E050C000B220A /* ZYDengLuModel.h */,
 				18F81AF5249E050C000B220A /* ZYDengLuModel.m */,
 				18F81AF3249E050C000B220A /* ZYusModel.h */,
@@ -1003,6 +1071,7 @@
 		18AADEB524935C82008BDACE /* TooL */ = {
 			isa = PBXGroup;
 			children = (
+				18E5971E24A2E43900C7CA79 /* YXCalendar */,
 				18D8460A24A05AF400B650BD /* YYModel */,
 				18F81AEA249E007C000B220A /* MBProgressHUD */,
 				18F81A75249DF898000B220A /* QIHUO */,
@@ -1053,6 +1122,8 @@
 				181CC1BD24A18DE1001F33C7 /* ZYHangYeFBM.m */,
 				181CC1C924A1A673001F33C7 /* ZYKxM.h */,
 				181CC1CA24A1A673001F33C7 /* ZYKxM.m */,
+				1860DB5F24A9EE27003B257B /* ZYShouYeM.h */,
+				1860DB6024A9EE27003B257B /* ZYShouYeM.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1123,6 +1194,8 @@
 				181CC1CD24A1AD4B001F33C7 /* ZYSheQuM.m */,
 				181CC1CF24A1CA48001F33C7 /* ZYSheQuB.h */,
 				181CC1D024A1CA48001F33C7 /* ZYSheQuB.m */,
+				1889DA3A24AB33FC00817888 /* ZYFenSiModel.h */,
+				1889DA3B24AB33FC00817888 /* ZYFenSiModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1134,7 +1207,6 @@
 				182C68F62498568C00E6F771 /* ZYReBangTableViewCell.h */,
 				182C68F72498568C00E6F771 /* ZYReBangTableViewCell.m */,
 				182C68F82498568C00E6F771 /* ZYReBangTableViewCell.xib */,
-				182C68FB24985B1D00E6F771 /* ZYTuiJianTableViewCell.h */,
 				182C68FC24985B1D00E6F771 /* ZYTuiJianTableViewCell.m */,
 				182C68FD24985B1D00E6F771 /* ZYTuiJianTableViewCell.xib */,
 			);
@@ -1153,53 +1225,69 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		18E5971E24A2E43900C7CA79 /* YXCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				18E5972724A2E43900C7CA79 /* YXCalendarView.h */,
+				18E5972224A2E43900C7CA79 /* YXCalendarView.m */,
+				18E5971F24A2E43900C7CA79 /* YXDateHelpObject.h */,
+				18E5972424A2E43900C7CA79 /* YXDateHelpObject.m */,
+				18E5972124A2E43900C7CA79 /* YXDayCell.h */,
+				18E5972524A2E43900C7CA79 /* YXDayCell.m */,
+				18E5972624A2E43900C7CA79 /* YXDayCell.xib */,
+				18E5972024A2E43900C7CA79 /* YXMonthView.h */,
+				18E5972324A2E43900C7CA79 /* YXMonthView.m */,
+			);
+			path = YXCalendar;
+			sourceTree = "<group>";
+		};
 		18F81A75249DF898000B220A /* QIHUO */ = {
 			isa = PBXGroup;
 			children = (
-				18F81A76249DF898000B220A /* YKLineChartViewBase.m */,
-				18F81A77249DF898000B220A /* YKLineDataSet.m */,
-				18F81A78249DF898000B220A /* NetWork.m */,
-				18F81A79249DF898000B220A /* TopView.h */,
-				18F81A7A249DF898000B220A /* ZCBaseView.m */,
-				18F81A7B249DF898000B220A /* YKTimeLineView.m */,
-				18F81A7C249DF898000B220A /* MacroQiHuo.h */,
 				18F81A7D249DF898000B220A /* BusinessProcess.h */,
-				18F81A7E249DF898000B220A /* QHLoctionModel.m */,
-				18F81A7F249DF898000B220A /* Tools */,
-				18F81A8C249DF898000B220A /* QHDHHeadCollectionViewCell.m */,
-				18F81A8D249DF898000B220A /* YKViewBase.m */,
-				18F81A8E249DF898000B220A /* ZCBaseViewController.h */,
-				18F81A8F249DF898000B220A /* MVPKlineView.h */,
-				18F81A90249DF898000B220A /* ZCMakeTableViewCell.m */,
-				18F81A91249DF898000B220A /* QHDetailViewController.m */,
-				18F81A92249DF898000B220A /* YKLineChartView.m */,
-				18F81A93249DF898000B220A /* ZCManage.m */,
-				18F81A94249DF898000B220A /* ThirdPart */,
-				18F81A9C249DF898000B220A /* QHDataCollectionViewCell.m */,
-				18F81A9D249DF898000B220A /* YKLineEntity.h */,
-				18F81A9E249DF898000B220A /* CZ_NEWMarketVC.m */,
-				18F81A9F249DF898000B220A /* QHLoctionModel.h */,
 				18F81AA0249DF898000B220A /* BusinessProcess.m */,
-				18F81AA1249DF898000B220A /* Manager */,
-				18F81AAF249DF898000B220A /* YKTimeLineView.h */,
-				18F81AB0249DF898000B220A /* ZCBaseView.h */,
-				18F81AB1249DF898000B220A /* TopView.m */,
-				18F81AB2249DF898000B220A /* NetWork.h */,
-				18F81AB3249DF898000B220A /* YKLineDataSet.h */,
-				18F81AB4249DF898000B220A /* Macro */,
-				18F81ABA249DF898000B220A /* YKLineChartViewBase.h */,
-				18F81ABB249DF898000B220A /* ZCBaseViewController.m */,
-				18F81ABC249DF898000B220A /* YKViewBase.h */,
-				18F81ABD249DF898000B220A /* QHDHHeadCollectionViewCell.h */,
-				18F81ABE249DF898000B220A /* MVPKlineView.m */,
-				18F81ABF249DF898000B220A /* ZCMakeTableViewCell.h */,
-				18F81AC0249DF898000B220A /* QHDetailViewController.h */,
-				18F81AC1249DF898000B220A /* YKLineChart.h */,
 				18F81AC2249DF898000B220A /* CZ_NEWMarketVC.h */,
-				18F81AC3249DF898000B220A /* YKLineEntity.m */,
+				18F81A9E249DF898000B220A /* CZ_NEWMarketVC.m */,
+				18F81AB4249DF898000B220A /* Macro */,
+				18F81A7C249DF898000B220A /* MacroQiHuo.h */,
+				18F81AA1249DF898000B220A /* Manager */,
+				18F81A8F249DF898000B220A /* MVPKlineView.h */,
+				18F81ABE249DF898000B220A /* MVPKlineView.m */,
+				18F81AB2249DF898000B220A /* NetWork.h */,
+				18F81A78249DF898000B220A /* NetWork.m */,
 				18F81AC4249DF898000B220A /* QHDataCollectionViewCell.h */,
-				18F81AC5249DF898000B220A /* ZCManage.h */,
+				18F81A9C249DF898000B220A /* QHDataCollectionViewCell.m */,
+				18F81AC0249DF898000B220A /* QHDetailViewController.h */,
+				18F81A91249DF898000B220A /* QHDetailViewController.m */,
+				18F81ABD249DF898000B220A /* QHDHHeadCollectionViewCell.h */,
+				18F81A8C249DF898000B220A /* QHDHHeadCollectionViewCell.m */,
+				18F81A9F249DF898000B220A /* QHLoctionModel.h */,
+				18F81A7E249DF898000B220A /* QHLoctionModel.m */,
+				18F81A94249DF898000B220A /* ThirdPart */,
+				18F81A7F249DF898000B220A /* Tools */,
+				18F81A79249DF898000B220A /* TopView.h */,
+				18F81AB1249DF898000B220A /* TopView.m */,
+				18F81AC1249DF898000B220A /* YKLineChart.h */,
 				18F81AC6249DF898000B220A /* YKLineChartView.h */,
+				18F81A92249DF898000B220A /* YKLineChartView.m */,
+				18F81ABA249DF898000B220A /* YKLineChartViewBase.h */,
+				18F81A76249DF898000B220A /* YKLineChartViewBase.m */,
+				18F81AB3249DF898000B220A /* YKLineDataSet.h */,
+				18F81A77249DF898000B220A /* YKLineDataSet.m */,
+				18F81A9D249DF898000B220A /* YKLineEntity.h */,
+				18F81AC3249DF898000B220A /* YKLineEntity.m */,
+				18F81AAF249DF898000B220A /* YKTimeLineView.h */,
+				18F81A7B249DF898000B220A /* YKTimeLineView.m */,
+				18F81ABC249DF898000B220A /* YKViewBase.h */,
+				18F81A8D249DF898000B220A /* YKViewBase.m */,
+				18F81AB0249DF898000B220A /* ZCBaseView.h */,
+				18F81A7A249DF898000B220A /* ZCBaseView.m */,
+				18F81A8E249DF898000B220A /* ZCBaseViewController.h */,
+				18F81ABB249DF898000B220A /* ZCBaseViewController.m */,
+				18F81ABF249DF898000B220A /* ZCMakeTableViewCell.h */,
+				18F81A90249DF898000B220A /* ZCMakeTableViewCell.m */,
+				18F81AC5249DF898000B220A /* ZCManage.h */,
+				18F81A93249DF898000B220A /* ZCManage.m */,
 			);
 			path = QIHUO;
 			sourceTree = "<group>";
@@ -1346,6 +1434,7 @@
 				TargetAttributes = {
 					18AADE92249358F5008BDACE = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -1376,6 +1465,7 @@
 				18878E7D249C5183004104B0 /* ZYDengluViewController.xib in Resources */,
 				181CE546249A14D6002325A3 /* ZYDibuTableViewCell.xib in Resources */,
 				1833E94A249B01ED003B2378 /* ZYGenXinViewController.xib in Resources */,
+				1889DA3924AADD3E00817888 /* ZYTaRenDtHeader.xib in Resources */,
 				1833E944249AFA69003B2378 /* ZYGuanYuWoMenViewController.xib in Resources */,
 				18AADEA6249358F8008BDACE /* LaunchScreen.storyboard in Resources */,
 				18878E8D249C87BC004104B0 /* ZYQDCGViewController.xib in Resources */,
@@ -1401,6 +1491,7 @@
 				1833E96C249B43C7003B2378 /* ZYMeiWangDTTableViewCell.xib in Resources */,
 				1833E981249B5EF9003B2378 /* ZYBJXbViewController.xib in Resources */,
 				18878E88249C8324004104B0 /* ZYQianDaoViewController.xib in Resources */,
+				18E5972C24A2E43900C7CA79 /* YXDayCell.xib in Resources */,
 				18AADED524936779008BDACE /* ZYMyViewController.xib in Resources */,
 				182C69472498985700E6F771 /* ZYRiLiViewController.xib in Resources */,
 				181CC1C824A192E9001F33C7 /* ZYXYFbXQTableViewCell.xib in Resources */,
@@ -1414,6 +1505,7 @@
 				1833E957249B1AA4003B2378 /* ZYGeRenXinXiViewController.xib in Resources */,
 				182C6918249891BE00E6F771 /* ZYShiShiHangQingViewController.xib in Resources */,
 				182C694C2498986700E6F771 /* ZYHangYeViewController.xib in Resources */,
+				1889DA3424AAD79F00817888 /* ZYFenSiDTViewController.xib in Resources */,
 				183C96EF249772AB00D23AD2 /* ZYBiXiangQingTableViewCell.xib in Resources */,
 				181CC1E124A1EC79001F33C7 /* ZYJingXuanXiangQingTableViewCell.xib in Resources */,
 				182C690924986D4000E6F771 /* ZYWoDeHeaDerview.xib in Resources */,
@@ -1427,11 +1519,13 @@
 				1833E977249B4B99003B2378 /* ZYBianJiViewController.xib in Resources */,
 				18878E82249C5AF8004104B0 /* ZYZhuCeViewController.xib in Resources */,
 				18363B81249CBD2800448116 /* ZYFenSiViewController.xib in Resources */,
+				1860DB5B24A98196003B257B /* ZYGxQmViewController.xib in Resources */,
 				18F81AF2249E007C000B220A /* MBProgressHUD.bundle in Resources */,
 				182C68FA2498568C00E6F771 /* ZYReBangTableViewCell.xib in Resources */,
 				183C96992497248D00D23AD2 /* ZYZiXunViewController.xib in Resources */,
 				181CE50C2499AE30002325A3 /* ZYHangYeTableViewCell.xib in Resources */,
 				182C69512498987800E6F771 /* ZYKuaiXunViewController.xib in Resources */,
+				182A3D2024AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.xib in Resources */,
 				183C968F2497246900D23AD2 /* ZYShouYeViewController.xib in Resources */,
 				183C96E52497684300D23AD2 /* ZYJingXuanTableViewCell.xib in Resources */,
 			);
@@ -1486,6 +1580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1860DB6124A9EE27003B257B /* ZYShouYeM.m in Sources */,
 				1833E961249B39D8003B2378 /* ZYGeRenXinXiTableViewCell.m in Sources */,
 				181CE53A249A0A58002325A3 /* ZYPingLunHeaderView.m in Sources */,
 				1833E949249B01ED003B2378 /* ZYGenXinViewController.m in Sources */,
@@ -1494,13 +1589,16 @@
 				18F81ACD249DF898000B220A /* TimerTool.m in Sources */,
 				18AADE9E249358F5008BDACE /* ViewController.m in Sources */,
 				181CE50B2499AE30002325A3 /* ZYHangYeTableViewCell.m in Sources */,
+				18E5972924A2E43900C7CA79 /* YXMonthView.m in Sources */,
 				18F81AE7249DF898000B220A /* MVPKlineView.m in Sources */,
+				1889DA3324AAD79F00817888 /* ZYFenSiDTViewController.m in Sources */,
 				18878E7C249C5183004104B0 /* ZYDengluViewController.m in Sources */,
 				181CC1D124A1CA48001F33C7 /* ZYSheQuB.m in Sources */,
 				1833E96B249B43C7003B2378 /* ZYMeiWangDTTableViewCell.m in Sources */,
 				181CC1D624A1DAF3001F33C7 /* talkListModel.m in Sources */,
 				18F81AFC249E09A3000B220A /* ZYTXYZMViewController.m in Sources */,
 				182C6917249891BE00E6F771 /* ZYShiShiHangQingViewController.m in Sources */,
+				1889DA3724AADD3000817888 /* ZYTaRenDtHeader.m in Sources */,
 				18F81AF8249E050C000B220A /* ZYDengLuModel.m in Sources */,
 				18AADEC924935D82008BDACE /* BaseViewController.m in Sources */,
 				182C6AE12498D08A00E6F771 /* ZYPingLunTableViewCell.m in Sources */,
@@ -1508,10 +1606,12 @@
 				18363B86249CBD7400448116 /* ZYFenSiTableViewCell.m in Sources */,
 				183C968E2497246900D23AD2 /* ZYShouYeViewController.m in Sources */,
 				18F81AD7249DF898000B220A /* YKLineChartView.m in Sources */,
+				182A3D1F24AC28BE00F7F29E /* ZYQieHuanZhangHaoViewController.m in Sources */,
 				182C69372498967600E6F771 /* ZJScrollPageView.m in Sources */,
 				183C96DF24975E5900D23AD2 /* ZYZiXunPushTableViewCell.m in Sources */,
 				182C69412498984600E6F771 /* ZYHangQingViewController.m in Sources */,
 				18AADED424936779008BDACE /* ZYMyViewController.m in Sources */,
+				181674DA24A88F6E00A21358 /* ZYGxQmModel.m in Sources */,
 				1833E966249B42F8003B2378 /* ZYZanWuDTTableViewCell.m in Sources */,
 				18F81AE4249DF898000B220A /* LCPNetWorkGET.m in Sources */,
 				181CE540249A0D92002325A3 /* ZYPlTableViewCell.m in Sources */,
@@ -1523,6 +1623,7 @@
 				1833E976249B4B99003B2378 /* ZYBianJiViewController.m in Sources */,
 				18F81AE1249DF898000B220A /* LCPNetWorkManager.m in Sources */,
 				18F81AD5249DF898000B220A /* ZCMakeTableViewCell.m in Sources */,
+				18E5972824A2E43900C7CA79 /* YXCalendarView.m in Sources */,
 				18F81AD3249DF898000B220A /* QHDHHeadCollectionViewCell.m in Sources */,
 				18F81ACF249DF898000B220A /* Toast.m in Sources */,
 				181CE51A2499B6CB002325A3 /* ZYHangQingHeaderView.m in Sources */,
@@ -1546,6 +1647,7 @@
 				181CE54A249A1C2D002325A3 /* ZYDIbuWuTableViewCell.m in Sources */,
 				181CC1C224A19226001F33C7 /* ZYHyFbXqViewController.m in Sources */,
 				183C96F324977A1200D23AD2 /* ZYZiXunJingXuanTableViewCell.m in Sources */,
+				181674DB24A88F6E00A21358 /* ZYNameModel.m in Sources */,
 				1833E943249AFA69003B2378 /* ZYGuanYuWoMenViewController.m in Sources */,
 				1833E95B249B1AD6003B2378 /* ZYGeRenXinXiHeader.m in Sources */,
 				182C69342498967600E6F771 /* ZJCollectionView.m in Sources */,
@@ -1556,6 +1658,7 @@
 				182C694B2498986700E6F771 /* ZYHangYeViewController.m in Sources */,
 				182C69B22498AF8100E6F771 /* ZYMingChengTableViewCell.m in Sources */,
 				18AADE98249358F5008BDACE /* AppDelegate.m in Sources */,
+				1860DB5A24A98196003B257B /* ZYGxQmViewController.m in Sources */,
 				18F81AE6249DF898000B220A /* ZCBaseViewController.m in Sources */,
 				182C690D249878E800E6F771 /* ZYWoDeTableViewCell.m in Sources */,
 				18F81AE2249DF898000B220A /* LCPNetWorkPOST.m in Sources */,
@@ -1568,7 +1671,9 @@
 				181CE52C2499DF77002325A3 /* ZYFaBuViewController.m in Sources */,
 				183C96932497247F00D23AD2 /* ZYSheQuViewController.m in Sources */,
 				181CC1E024A1EC79001F33C7 /* ZYJingXuanXiangQingTableViewCell.m in Sources */,
+				1889DA3C24AB33FC00817888 /* ZYFenSiModel.m in Sources */,
 				182C69502498987800E6F771 /* ZYKuaiXunViewController.m in Sources */,
+				1860DB5E24A9D257003B257B /* NetworkTool.swift in Sources */,
 				18F81ADA249DF898000B220A /* Reachability.m in Sources */,
 				18F81AD0249DF898000B220A /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				181CE545249A14D6002325A3 /* ZYDibuTableViewCell.m in Sources */,
@@ -1601,6 +1706,7 @@
 				18F81AD4249DF898000B220A /* YKViewBase.m in Sources */,
 				181CC1BE24A18DE1001F33C7 /* ZYHangYeFBM.m in Sources */,
 				18F81AE0249DF898000B220A /* LCPNetWorkPUT.m in Sources */,
+				18E5972B24A2E43900C7CA79 /* YXDayCell.m in Sources */,
 				181CC1CB24A1A673001F33C7 /* ZYKxM.m in Sources */,
 				1833E956249B1AA4003B2378 /* ZYGeRenXinXiViewController.m in Sources */,
 				18363B6D249CA28600448116 /* ZYRiLiShuJuTableViewCell.m in Sources */,
@@ -1609,6 +1715,7 @@
 				18F81ACE249DF898000B220A /* StringAndLabelDealTool.m in Sources */,
 				182C69322498967600E6F771 /* UIViewController+ZJScrollPageController.m in Sources */,
 				182C68FE24985B1D00E6F771 /* ZYTuiJianTableViewCell.m in Sources */,
+				18E5972A24A2E43900C7CA79 /* YXDateHelpObject.m in Sources */,
 				182C69302498967600E6F771 /* UIView+ZJFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1750,15 +1857,21 @@
 			baseConfigurationReference = 8F55867B2C4B40856A93F42E /* Pods-ZyProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = ZyProject/PrefixHeader.pch;
 				INFOPLIST_FILE = ZyProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.520it.ZyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZyProject/SheQu/Controller/FaBu/ZyProject-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "ZyProject-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1768,15 +1881,20 @@
 			baseConfigurationReference = E6ACE0BEA6BFF892C93AE668 /* Pods-ZyProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = ZyProject/PrefixHeader.pch;
 				INFOPLIST_FILE = ZyProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.520it.ZyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ZyProject/SheQu/Controller/FaBu/ZyProject-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "ZyProject-Swift.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

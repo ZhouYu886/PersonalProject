@@ -25,8 +25,12 @@
     [super viewDidLoad];
     [self tt];
     [self shuaxin];
+    self.ZJSJ = 1;
     self.TableView.delegate = self;
     self.TableView.dataSource = self;
+    
+    //设置tableView分割线不显示
+    self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
      //设置导航栏颜色
          self.navigationController.navigationBar.barTintColor = RGB(47, 50, 55);
@@ -108,7 +112,7 @@
               header.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
 
               // 马上进入刷新状态
-        //      [header beginRefreshing];
+//              [header beginRefreshing];
 
               // 设置刷新控件
               self.TableView.mj_header = header;
@@ -155,7 +159,7 @@
     if (_HangQingArray != nil && ![_HangQingArray isKindOfClass:[NSNull class]] && _HangQingArray.count != 0) {
           [header setTitle:@"刷新成功" forState:MJRefreshStateRefreshing];
           [header endRefreshing];
-        
+        [self tt];
         
     }else{
         [header setTitle:@"刷新失败" forState:MJRefreshStateRefreshing];

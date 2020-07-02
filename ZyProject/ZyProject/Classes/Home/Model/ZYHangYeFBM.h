@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZYHangYeFBM : NSObject
 
-@property(nonatomic,strong)NSString *title;
+@property (nonatomic,strong)NSString *BT;
 
 @property(nonatomic,strong)NSString *content;
 
-@property(nonatomic,strong)NSString *picture;
+@property (nonatomic,strong)NSString *time;
 
 
 +(instancetype)HYFBM:(NSDictionary *)dict;

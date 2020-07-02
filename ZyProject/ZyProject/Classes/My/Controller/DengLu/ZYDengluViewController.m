@@ -29,6 +29,19 @@
 
 @implementation ZYDengluViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+
+    self.tabBarController.tabBar.hidden = YES;
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+
+  self.tabBarController.tabBar.hidden = NO;
+
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
  
@@ -77,7 +90,6 @@
 -(void)swipeGes:(UISwipeGestureRecognizer *)swipe
 {
     if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
-        
         ZYZhuCeViewController *zc = [ ZYZhuCeViewController new];
         [self.navigationController pushViewController:zc animated:YES];
         
@@ -87,7 +99,9 @@
 }
 - (IBAction)POP:(UIButton *)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+//    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 
@@ -97,10 +111,10 @@
     self.YanJing.selected = !self.YanJing.selected;
     if (self.YanJing.selected){
         self.MiMA.secureTextEntry = NO;
-        [self.YanJing setImage:[UIImage imageNamed:@"ic_bukejian"] forState:UIControlStateNormal];
+        [self.YanJing setImage:[UIImage imageNamed:@"ic_kejian"] forState:UIControlStateNormal];
     }else{
         self.MiMA.secureTextEntry = YES;
-        [self.YanJing setImage:[UIImage imageNamed:@"ic_kejian"] forState:UIControlStateNormal];
+        [self.YanJing setImage:[UIImage imageNamed:@"ic_bukejian"] forState:UIControlStateNormal];
     }
 }
 
@@ -109,15 +123,22 @@
 - (IBAction)DengLu:(UIButton *)sender
 {
       [MBProgressHUD showMessage:@"正在登录..." toView:self.view];
-        [MBProgressHUD hideHUDForView:self.view];
+      
         NSDictionary *dict = @{
             @"phone" : self.ZhangHao.text,
             @"password" : self.MiMA.text,
             @"project" : @"future",
             @"code" : @"000000"
         };
-    
-        [LCPNetWorkManager getWithPathUrl:@"/system/login" parameters:dict queryParams:nil Header:nil success:^(BOOL success, id result) {
+
+        [LCPNetWorkManager getWithPathUrl:@"/system/login" parameters:dict queryParams:nil Header:nil success:^(BOOL success, id result)
+         {
+            [MBProgressHUD hideHUDForView:self.view];
+            if ([result[@"success"] isEqualToNumber:@0]) {
+                [MBProgressHUD hideHUDForView:self.view];
+                [MBProgressHUD showError:result[@"msg"]];
+            }
+            
             ZYusModel *userM = [ZYusModel mj_objectWithKeyValues:result[@"data"]];
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:userM.album forKey:@"album"];
@@ -134,12 +155,11 @@
             [userDefaults setObject:userM.type forKey:@"type"];
             [userDefaults setObject:userM.uuid forKey:@"uuid"];
             NSLog(@"%@",userM.phone);
-            [self.navigationController popViewControllerAnimated:YES];
+          [self.navigationController popToRootViewControllerAnimated:YES];
         } failure:^(BOOL failuer, NSError *error) {
-             [MBProgressHUD showError:@"用户名或密码错误"];
+             [MBProgressHUD hideHUDForView:self.view];
+             [MBProgressHUD showError:@"账户或密码错误"];
         }];
-    
-    
 }
 
 

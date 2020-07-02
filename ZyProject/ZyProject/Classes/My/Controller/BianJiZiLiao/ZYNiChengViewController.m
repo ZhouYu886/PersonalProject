@@ -7,6 +7,7 @@
 //
 
 #import "ZYNiChengViewController.h"
+#import "ZYNameModel.h"
 
 @interface ZYNiChengViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *NiCheng;
@@ -23,6 +24,9 @@
     
     //写方法
     [_NiCheng addTarget:self action:@selector(editChange) forControlEvents:UIControlEventEditingChanged];
+    
+    //昵称模型传值
+    self.NiCheng.text = self.ContactM.name;
     
 }
 
@@ -45,7 +49,41 @@
     
 }
 
+
+
+
+
   
+- (IBAction)QueDing:(UIButton *)sender
+{
+        ZYNameModel *contactM =[ZYNameModel ContactModelWithname:self.NiCheng.text];
+        
+        if ([self.delegate respondsToSelector:@selector(GainichengViewController:NichengModel:)]==YES) {
+            [self.delegate GainichengViewController:self NichengModel:contactM];
+        }
+    //    else if ([self.delegate  respondsToSelector:@selector(gainichengVC:NCModel:)]== YES){
+    //        [self.delegate gainichengVC:self NCModel:contactM];
+    //    }
+        NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+            NSDictionary *dict = @{
+                @"uuid": [userdefault objectForKey:@"uuid"],
+                @"id": [userdefault objectForKey:@"id"],
+                @"nickName": [userdefault objectForKey:@"nickName"],
+                @"type": [userdefault objectForKey:@"type"],
+            };
+            [LCPNetWorkManager putWithPathUrl:@"/user/personal/updateUser" parameters:dict queryParams:nil Header:nil success:^(BOOL success, id result) {
+                NSLog(@"updata is success");
+            } failure:^(BOOL failuer, NSError *error) {
+                 NSLog(@"updata is bad");
+            }];
+        [userdefault setObject:self.NiCheng.text forKey:@"nickName"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+    
+    
+    
+    
+}
 
 
 

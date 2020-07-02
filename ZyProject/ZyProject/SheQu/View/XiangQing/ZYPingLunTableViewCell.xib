@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="691"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="徽商期货期权论坛——股指期权卖方策略风控必备工具与事前风控实务" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83m-Lv-d41">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="徽商期货期权论坛——股指期权卖方策略风控必备工具与事前风控实务" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83m-Lv-d41">
                         <rect key="frame" x="11" y="14" width="346" height="41"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="41" id="GZ6-3Z-9xI"/>
@@ -90,6 +91,9 @@
                             <constraint firstAttribute="height" constant="30" id="iN1-p3-fm7"/>
                         </constraints>
                         <state key="normal" backgroundImage="pic_buganxingqu"/>
+                        <connections>
+                            <action selector="BuXiHuan:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Udt-sh-GRQ"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bs-Ja-Jhe">
                         <rect key="frame" x="10" y="121.5" width="355" height="363.5"/>
@@ -140,6 +144,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="BT" destination="83m-Lv-d41" id="RpW-Yb-Epz"/>
+                <outlet property="BUXiHuan" destination="5v7-5b-Lgn" id="5GB-Ut-idd"/>
                 <outlet property="GuanZhu" destination="jkd-jJ-gdD" id="7bN-sd-IiZ"/>
                 <outlet property="NR" destination="8bs-Ja-Jhe" id="1nB-0D-tIg"/>
                 <outlet property="Name" destination="3PK-JV-X4D" id="Zpk-JS-rmr"/>

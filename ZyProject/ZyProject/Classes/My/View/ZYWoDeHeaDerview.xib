@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wode" translatesAutoresizingMaskIntoConstraints="NO" id="f8y-va-8xt">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_geren" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-ko-fsR">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_geren" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-ko-fsR">
                     <rect key="frame" x="38" y="50" width="42" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="4LG-cX-EuE"/>
@@ -24,10 +25,10 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="136****3336" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XB-kh-gfu">
-                    <rect key="frame" x="88.5" y="78" width="100" height="8.5"/>
+                    <rect key="frame" x="88.5" y="78" width="200" height="8.5"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="8.5" id="AVQ-Lf-73u"/>
-                        <constraint firstAttribute="width" constant="100" id="Mfc-Aw-u19"/>
+                        <constraint firstAttribute="width" constant="200" id="3hG-xl-WtD"/>
+                        <constraint firstAttribute="height" constant="8.5" id="w1I-x8-LOd"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,12 +159,12 @@
             <constraints>
                 <constraint firstItem="f8y-va-8xt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0vC-ai-R8r"/>
                 <constraint firstItem="6x9-2m-zdG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="BeJ-Mo-QLt"/>
-                <constraint firstItem="8XB-kh-gfu" firstAttribute="top" secondItem="77c-oo-UcH" secondAttribute="bottom" constant="10" id="Cao-M5-64q"/>
-                <constraint firstItem="8XB-kh-gfu" firstAttribute="leading" secondItem="EL3-ko-fsR" secondAttribute="trailing" constant="8.5" id="F2t-EQ-ADg"/>
                 <constraint firstItem="77c-oo-UcH" firstAttribute="leading" secondItem="EL3-ko-fsR" secondAttribute="trailing" constant="8" id="KES-yt-UzG"/>
                 <constraint firstItem="6x9-2m-zdG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="KTr-rP-TkN"/>
                 <constraint firstItem="EL3-ko-fsR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="38" id="Qwf-c9-7ia"/>
                 <constraint firstItem="f8y-va-8xt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="T60-xs-DgF"/>
+                <constraint firstItem="8XB-kh-gfu" firstAttribute="top" secondItem="77c-oo-UcH" secondAttribute="bottom" constant="10" id="VK5-Ja-UQC"/>
+                <constraint firstItem="8XB-kh-gfu" firstAttribute="leading" secondItem="EL3-ko-fsR" secondAttribute="trailing" constant="8.5" id="XHz-ZG-Jvp"/>
                 <constraint firstItem="77c-oo-UcH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="b52-A5-fVq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d5q-wM-h4T" secondAttribute="trailing" constant="20" id="f1h-zy-GzM"/>
                 <constraint firstItem="EL3-ko-fsR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="f7i-eM-rbp"/>
@@ -175,6 +176,12 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="DT" destination="HZS-Cz-cXE" id="x7P-iT-gga"/>
+                <outlet property="FS" destination="ewn-AW-WJQ" id="hKe-pM-L5B"/>
+                <outlet property="GZ" destination="jqX-Dh-nM6" id="IaZ-PT-agM"/>
+                <outlet property="GxQmLabel" destination="8XB-kh-gfu" id="1eY-t4-zBi"/>
+                <outlet property="NameLabel" destination="77c-oo-UcH" id="Aug-CH-IdK"/>
+                <outlet property="TxImage" destination="EL3-ko-fsR" id="Syy-A3-Nf5"/>
                 <outlet property="imagePush" destination="EL3-ko-fsR" id="gm6-JJ-DZC"/>
             </connections>
             <point key="canvasLocation" x="107" y="-52"/>

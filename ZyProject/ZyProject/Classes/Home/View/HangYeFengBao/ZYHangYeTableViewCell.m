@@ -20,8 +20,8 @@
 -(void)setHm:(ZYHangYeFBM *)Hm
 {
     _Hm = Hm;
-    self.BiaoTi.text = _Hm.title;
     self.NeiRong.text = _Hm.content;
+    self.BiaoTi.text = [_Hm.content substringToIndex:10];
 }
 
 @end

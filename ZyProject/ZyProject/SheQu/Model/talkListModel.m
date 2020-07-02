@@ -7,16 +7,27 @@
 //
 
 #import "talkListModel.h"
+#import <MJExtension/MJExtension.h>
+
 
 @implementation talkListModel
 +(NSDictionary *)mj_objectClassInArray
 {
     return @{
-        @"list" :@"ListModel"
+        @"list" :[ListModel class],
     };
 }
+
 @end
 
 @implementation ListModel
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{
+        @"userId":@"id"
+    };
+}
+
+
 @end
+

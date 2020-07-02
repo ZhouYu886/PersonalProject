@@ -108,6 +108,7 @@
 #define TimeForMatterStr @"yyyy-MM-dd HH:mm:ss"
 #import "MacroQiHuo.h"
 #import "MacroHeader.h"
+#import "ZyProject-Swift.h"
 #endif /* MacroStringHeader_h */
 
 

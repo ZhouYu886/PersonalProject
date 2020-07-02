@@ -30,6 +30,7 @@
 
 @property(nonatomic,strong)NSArray *HuoBiArray;
 @property(nonatomic,strong)ZYZiXunJingXuanHeader *header;
+@property(nonatomic,strong)NSArray *ShuziArray;
 
 @end
 
@@ -47,6 +48,7 @@
     [self setB];
     [self ZiXunJingXuna];
     [self tt];
+    [self ShuZi];
     //设置界面标题
     self.title = @"首页";
     
@@ -60,6 +62,9 @@
           [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
           self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+    
+    //设置tableView分割线不显示
+    self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
           
       //设置导航栏颜色
        self.navigationController.navigationBar.barTintColor = RGB(44, 48, 52);
@@ -70,6 +75,7 @@
     self.TableView.backgroundColor  = RGB(44, 48, 52);
     
     //设置左边点击跳转头像
+    
      UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
      [btn setImage:[UIImage imageNamed:@"pic_shouyetouxiang"] forState:UIControlStateNormal];
      [btn addTarget:self action:@selector(leftClick) forControlEvents:UIControlEventTouchUpInside];
@@ -104,6 +110,27 @@
     //设置cell标识
      [self.TableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYZiXunJingXuanTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"ZiXunJingXuan"];
 }
+
+
+-(void)ShuZi{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://data.api51.cn/apis/integration/rank/?market_type=cryptocurrency&limit=13&order_by=desc&fields=prod_name%2Cprod_code%2Clast_px%2Cpx_change%2Cpx_change_rate%2Chigh_px%2Clow_px%2Cupdate_time&token=3f39051e89e1cea0a84da126601763d8" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dada = responseObject[@"data"];
+        NSArray *arr = dada[@"candle"];
+
+        self.ShuziArray= arr;
+       [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+       [self.TableView reloadData];
+       }];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"@");
+    }];
+        
+}
+
+
+
 
 -(void)ZiXunJingXuna{
         NSDate *date=[NSDate date];
@@ -196,7 +223,7 @@
     }else if(section == 2){
         return 1;
     }else if (section == 3){
-        return 5;
+        return self.ShuziArray.count;
     }else{
         return self.ZiXunArray.count;
     }
@@ -243,64 +270,70 @@
        self.TableView.rowHeight = 43;
            return cell;
    }
-   else if (indexPath.section==3 && indexPath.row == 0){
+   else if (indexPath.section==3){
            ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+       cell.BiZhongLabel.text = self.ShuziArray[indexPath.row][1];
+       cell.ShouYiLabel.text = [NSString stringWithFormat:@"%f",[_ShuziArray[indexPath.row][3] floatValue]];
+       cell.JiaGeLabel.text = [NSString stringWithFormat:@"%f",[_ShuziArray[indexPath.row][2] floatValue]];
+       cell.GunagChiSuanLabel.text = [NSString stringWithFormat:@"%f",[_ShuziArray[indexPath.row][4] floatValue]];
+       cell.QuanWangSuan.text = [NSString stringWithFormat:@"%f",[_ShuziArray[indexPath.row][5] floatValue]];
+       cell.KuangJiShu.text = [NSString stringWithFormat:@"%f",[_ShuziArray[indexPath.row][6] floatValue]];
        self.TableView.rowHeight = 51;
            return cell;
    }
-   else if (indexPath.section==3 && indexPath.row == 1){
-                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
-           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-       self.TableView.rowHeight = 51;
-       cell.Image.image = [UIImage imageNamed:@"pic_logo2"];
-       cell.BiZhongLabel.text = @"BTCD";
-       cell.ShouYiLabel.text = @"¥0.6/T";
-       cell.JiaGeLabel.text = @"¥56864.48";
-       cell.GunagChiSuanLabel.text = @"18.69EN/s";
-       cell.QuanWangSuan.text = @"63.58EH/s";
-       cell.KuangJiShu.text = @"693.432";
-       return cell;
-   }
-   else if (indexPath.section==3 && indexPath.row == 2){
-                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
-           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-       self.TableView.rowHeight = 51;
-       cell.Image.image = [UIImage imageNamed:@"pic_logo3"];
-       cell.BiZhongLabel.text = @"BTCD";
-       cell.ShouYiLabel.text = @"¥0.6/T";
-       cell.JiaGeLabel.text = @"¥56864.48";
-       cell.GunagChiSuanLabel.text = @"18.69EN/s";
-       cell.QuanWangSuan.text = @"63.58EH/s";
-       cell.KuangJiShu.text = @"693.432";
-       return cell;
-   }
-   else if (indexPath.section==3 && indexPath.row == 3){
-                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
-           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-       self.TableView.rowHeight = 51;
-       cell.Image.image = [UIImage imageNamed:@"pic_logo4"];
-       cell.BiZhongLabel.text = @"BTCD";
-       cell.ShouYiLabel.text = @"¥0.6/T";
-       cell.JiaGeLabel.text = @"¥56864.48";
-       cell.GunagChiSuanLabel.text = @"18.69EN/s";
-       cell.QuanWangSuan.text = @"63.58EH/s";
-       cell.KuangJiShu.text = @"693.432";
-       return cell;
-   }
-   else if (indexPath.section==3 && indexPath.row == 4){
-                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
-           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-       self.TableView.rowHeight = 51;
-       cell.Image.image = [UIImage imageNamed:@"pic_logo5"];
-       cell.BiZhongLabel.text = @"BTCD";
-       cell.ShouYiLabel.text = @"¥0.6/T";
-       cell.JiaGeLabel.text = @"¥56864.48";
-       cell.GunagChiSuanLabel.text = @"18.69EN/s";
-       cell.QuanWangSuan.text = @"63.58EH/s";
-       cell.KuangJiShu.text = @"693.432";
-       return cell;
-   }
+//   else if (indexPath.section==3 && indexPath.row == 1){
+//                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
+//           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//       self.TableView.rowHeight = 51;
+//       cell.Image.image = [UIImage imageNamed:@"pic_logo2"];
+//       cell.BiZhongLabel.text = @"BTCD";
+//       cell.ShouYiLabel.text = @"¥0.6/T";
+//       cell.JiaGeLabel.text = @"¥56864.48";
+//       cell.GunagChiSuanLabel.text = @"18.69EN/s";
+//       cell.QuanWangSuan.text = @"63.58EH/s";
+//       cell.KuangJiShu.text = @"693.432";
+//       return cell;
+//   }
+//   else if (indexPath.section==3 && indexPath.row == 2){
+//                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
+//           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//       self.TableView.rowHeight = 51;
+//       cell.Image.image = [UIImage imageNamed:@"pic_logo3"];
+//       cell.BiZhongLabel.text = @"BTCD";
+//       cell.ShouYiLabel.text = @"¥0.6/T";
+//       cell.JiaGeLabel.text = @"¥56864.48";
+//       cell.GunagChiSuanLabel.text = @"18.69EN/s";
+//       cell.QuanWangSuan.text = @"63.58EH/s";
+//       cell.KuangJiShu.text = @"693.432";
+//       return cell;
+//   }
+//   else if (indexPath.section==3 && indexPath.row == 3){
+//                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
+//           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//       self.TableView.rowHeight = 51;
+//       cell.Image.image = [UIImage imageNamed:@"pic_logo4"];
+//       cell.BiZhongLabel.text = @"BTCD";
+//       cell.ShouYiLabel.text = @"¥0.6/T";
+//       cell.JiaGeLabel.text = @"¥56864.48";
+//       cell.GunagChiSuanLabel.text = @"18.69EN/s";
+//       cell.QuanWangSuan.text = @"63.58EH/s";
+//       cell.KuangJiShu.text = @"693.432";
+//       return cell;
+//   }
+//   else if (indexPath.section==3 && indexPath.row == 4){
+//                  ZYBiXiangQingTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
+//           [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//       self.TableView.rowHeight = 51;
+//       cell.Image.image = [UIImage imageNamed:@"pic_logo5"];
+//       cell.BiZhongLabel.text = @"BTCD";
+//       cell.ShouYiLabel.text = @"¥0.6/T";
+//       cell.JiaGeLabel.text = @"¥56864.48";
+//       cell.GunagChiSuanLabel.text = @"18.69EN/s";
+//       cell.QuanWangSuan.text = @"63.58EH/s";
+//       cell.KuangJiShu.text = @"693.432";
+//       return cell;
+//   }
    else if(indexPath.section == 4 ){
        ZYZiXunJingXuanTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"ZiXunJingXuan"];
        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];

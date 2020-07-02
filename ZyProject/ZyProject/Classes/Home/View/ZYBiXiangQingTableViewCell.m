@@ -24,7 +24,7 @@
     self.GunagChiSuanLabel.frame = CGRectMake(2*w+ 21.5 +35, 11, 66, 17);
    
     
-    self.ShouYiLabel.frame = CGRectMake(w + 33, 11, 43, 17);
+    self.ShouYiLabel.frame = CGRectMake(w + 33, 11, 50, 17);
     
     self.JiaGeLabel.frame =  CGRectMake(w + 13.5, 30, 80, 15);
     
@@ -32,9 +32,8 @@
     
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-}
+
+
 
 @end

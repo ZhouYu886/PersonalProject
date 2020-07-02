@@ -7,23 +7,46 @@
 //
 
 #import "ZYGuanZhuTableViewCell.h"
+#import "userModel.h"
+#import <SDWebImage.h>
+
+@interface  ZYGuanZhuTableViewCell ()
+@property (weak, nonatomic) IBOutlet UIView *TXImage;
+@property (weak, nonatomic) IBOutlet UIImageView *TxImage;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *DT;
+@property (weak, nonatomic) IBOutlet UILabel *FS;
+
+@end
 
 @implementation ZYGuanZhuTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.TxImage.layer.cornerRadius = 19.5;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+-(void)setUM:(userModel *)UM
+{
+        _UM = UM;
+        self.NameLabel.text = UM.nickName;
+        self.DT.text = [NSString stringWithFormat:@"%@",UM.talkCount];
+        self.FS.text = [NSString stringWithFormat:@"%@",UM.fansCount];
+        [self.TxImage sd_setImageWithURL:[NSURL URLWithString:_UM.head] placeholderImage:nil];
+    
 }
+
+
+
+
+
+
 - (IBAction)BuZaiGuanZhu:(UIButton *)sender
 {
-    if ([self.delegate respondsToSelector:@selector(BuZaiGuanZhu)]) {
-        [self.delegate BuZaiGuanZhu];
+    if ([self.delegate respondsToSelector:@selector(remove:)]) {
+        [self.delegate remove:self];
     }
 
 }

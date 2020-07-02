@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class userModel;
 @interface ZYFenSiViewController : BaseViewController
 
 @end

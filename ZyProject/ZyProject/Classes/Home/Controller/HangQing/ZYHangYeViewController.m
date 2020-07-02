@@ -11,7 +11,7 @@
 #import "ZYHangYeViewController.h"
 #import "ZYHangYeFBM.h"
 #import "YYModel.h"
-#import "ZYHyFbXqViewController.h"
+//#import "ZYHyFbXqViewController.h"
 
 
 @interface ZYHangYeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -25,12 +25,21 @@
 
 @implementation ZYHangYeViewController
 
+//即将显示
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self tt];
+     [self shuaxin];
+}
+    
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self tt];
-    [self shuaxin];
+
     self.Tableview.delegate = self;
     self.Tableview.dataSource = self;
+    self.ZJSJ = 1;
          //设置导航栏颜色
              self.navigationController.navigationBar.barTintColor = RGB(47, 50, 55);
         //设置背景颜色
@@ -38,28 +47,37 @@
           self.Tableview.backgroundColor  = RGB(44, 48, 52);
     //设置cell标识
      [self.Tableview registerNib:[UINib nibWithNibName:NSStringFromClass([ZYHangYeTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"FengBao"];
-    
+    //设置tableView分割线不显示
+    self.Tableview.separatorStyle = UITableViewCellSelectionStyleNone;
     
 }
 
 -(void)tt
 {
-    NSURL *url = [NSURL URLWithString:@"http://api.yysc.online/share/getNewsList?pageNumber&pageSize"];
-       NSURLSession *session = [NSURLSession sharedSession];
-       [[session dataTaskWithURL:url completionHandler:^(
-       NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-           NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-           NSArray *arr = dict[@"data"];
-           NSMutableArray *arrayM = [NSMutableArray array];
-        for (NSDictionary *smallDic in arr) {
-               [arrayM addObject:[ZYHangYeFBM HYFBM:smallDic]];
-//               [arrayM addObject:[ZYHangYeFengbao HangYeFengBao:smallDic]];
-           }
-           self.HangYeFEngBaoArray = arrayM;
-           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               [self.Tableview reloadData];
-           }];
-       }]resume];
+    NSDate *date=[NSDate date];
+      NSDateFormatter* dayFormatter= [[NSDateFormatter alloc]init];
+      [dayFormatter setDateFormat:@"yyyy-MM-dd"];
+      NSString* strDate =[dayFormatter stringFromDate:date];
+      NSLog(@"%@",strDate);
+      
+      
+      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+      [manager GET:@"http://api.yysc.online/admin/getFinanceTalk" parameters:@{@"date":date,@"pageSize":@(self.ZJSJ*10)} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+          
+          NSDictionary *dada = responseObject[@"data"];
+          
+          NSMutableArray *arrayN = [NSMutableArray array];
+         for (NSDictionary *dict in dada) {
+          [arrayN addObject:[ZYHangYeFBM yy_modelWithDictionary:dict]];
+          }
+          
+          self.HangYeFEngBaoArray= arrayN;
+          
+          [self.Tableview reloadData];
+      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+          NSLog(@"@");
+      }];
+          
 }
 
 
@@ -75,21 +93,23 @@
  
       ZYHangYeTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"FengBao"];
       [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
      cell.Hm = self.HangYeFEngBaoArray[indexPath.row];
+    
       self.Tableview.rowHeight = 154;
       return cell;
 }
 
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row >= 0) {
-        ZYHyFbXqViewController *pushXQ = [ZYHyFbXqViewController new];
-        pushXQ.hangM = self.HangYeFEngBaoArray[indexPath.row];
-        [self.navigationController pushViewController:pushXQ animated:YES];
-    }
-    
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (indexPath.row >= 0) {
+//        ZYHyFbXqViewController *pushXQ = [ZYHyFbXqViewController new];
+//        pushXQ.hangM = self.HangYeFEngBaoArray[indexPath.row];
+//        [self.navigationController pushViewController:pushXQ animated:YES];
+//    }
+//    
+//}
 
 - (void)shuaxin{
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData:)];
@@ -97,7 +117,7 @@
               [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
               [header setTitle:@"即将刷新" forState:MJRefreshStatePulling];
               [header setTitle:@"正在刷新 ..." forState:MJRefreshStateRefreshing];
-
+              
               // 设置字体
               header.stateLabel.font = [UIFont systemFontOfSize:15];
               header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:14];
@@ -154,7 +174,7 @@
     if (_HangYeFEngBaoArray != nil && ![_HangYeFEngBaoArray isKindOfClass:[NSNull class]] && _HangYeFEngBaoArray.count != 0) {
           [header setTitle:@"刷新成功" forState:MJRefreshStateRefreshing];
           [header endRefreshing];
-        
+          [self tt];
         
     }else{
         [header setTitle:@"刷新失败" forState:MJRefreshStateRefreshing];

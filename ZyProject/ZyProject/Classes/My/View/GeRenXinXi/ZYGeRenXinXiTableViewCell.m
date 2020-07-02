@@ -7,18 +7,46 @@
 //
 
 #import "ZYGeRenXinXiTableViewCell.h"
+#import "userModel.h"
+#import "ZYFenSiModel.h"
+#import "talkListModel.h"
+#import <SDWebImage.h>
+
+@interface ZYGeRenXinXiTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *NeiRongLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *Tximage;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
+
+
+@end
 
 @implementation ZYGeRenXinXiTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.Tximage.layer.cornerRadius = 17.5;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+-(void)setUm:(userModel *)Um
+{
+    _Um = Um;
+    self.NameLabel.text = Um.nickName;
+    [self.Tximage sd_setImageWithURL:[NSURL URLWithString:_Um.head] placeholderImage:nil];
 }
+
+
+
+-(void)setListM:(ListModel *)listM{
+    if (_listM != listM) {
+        _listM = listM;
+    }
+    self.NeiRongLabel.text = _listM.content;
+    
+}
+
+
+
+
 
 @end

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_geren" translatesAutoresizingMaskIntoConstraints="NO" id="PTw-oF-VYL">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_geren" translatesAutoresizingMaskIntoConstraints="NO" id="PTw-oF-VYL">
                         <rect key="frame" x="15" y="20.5" width="35" height="37"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36.850000000000001" id="9q9-I3-HDt"/>
@@ -24,20 +25,15 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吃鱼鱼" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6S-Ie-uWT">
-                        <rect key="frame" x="55.5" y="23" width="70" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="EVy-eM-Nv1"/>
-                            <constraint firstAttribute="width" constant="70" id="v8t-uY-gq2"/>
-                        </constraints>
+                        <rect key="frame" x="55.5" y="20.5" width="37" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刚刚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-iH-gmq">
-                        <rect key="frame" x="55.5" y="42" width="100" height="12"/>
+                        <rect key="frame" x="55.5" y="45.5" width="20.5" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="c0K-l0-FJz"/>
-                            <constraint firstAttribute="height" constant="12" id="dJm-WU-sIg"/>
+                            <constraint firstAttribute="height" constant="12" id="wUb-9k-LD9"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.41137555240000001" green="0.41559898849999999" blue="0.4233933091" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -80,9 +76,9 @@
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6u-Cn-hCA">
                         <rect key="frame" x="15" y="71" width="345" height="89"/>
-                        <mutableString key="text">5月份期货公司微信订阅号运营榜单出炉！4家公司得分超过90分 最低得分仅有5.09分！近十年中国互联网网民数量快速增长，网民数量十年复合增长率达到8.9%，超过这段时间中国的GDP平均增速。随着国内互联网的高度发展和用户消费需求的不断升级，自媒体平台的影响力日益增强
-在此背景下，各大金融机构纷纷开设官方微信公众订阅号，开展品牌宣传工作，期货公司也积极参与。与此同时，投资者通过阅读订阅号内容也能够及时了解公司最新消息。为清晰反映期货公司微信订阅号的运营情况及现状，和讯期货推出“期货公司微信订阅号运营榜单”，供业界参考。</mutableString>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <string key="text">5月份期货公司微信订阅号运营榜单出炉！4家公司得分超过90分 最低得分仅有5.09分！近十年中国互联网网民数量快速增长，网民数量十年复合增长率达到8.9%，超过这段时间中国的GDP平均增速。随着国内互联网的高度发展和用户消费需求的不断升级，自媒体平台的影响力日益增强
+在此背景下，各大金融机构纷纷开设官方微信公众订阅号，开展品牌宣传工作，期货公司也积极参与。与此同时，投资者通过阅读订阅号内容也能够及时了解公司最新消息。为清晰反映期货公司微信订阅号的运营情况及现状，和讯期货推出“期货公司微信订阅号运营榜单”，供业界参考。</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -100,26 +96,32 @@
                     <constraint firstAttribute="trailing" secondItem="Mz0-o9-A0X" secondAttribute="trailing" constant="15" id="6vb-99-uzi"/>
                     <constraint firstAttribute="trailing" secondItem="h6u-Cn-hCA" secondAttribute="trailing" constant="15" id="85K-p9-gf6"/>
                     <constraint firstAttribute="bottom" secondItem="Mz0-o9-A0X" secondAttribute="bottom" constant="18.5" id="8vP-0h-Egf"/>
-                    <constraint firstItem="d6S-Ie-uWT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="23" id="9aQ-5N-xlL"/>
+                    <constraint firstItem="d6S-Ie-uWT" firstAttribute="top" secondItem="PTw-oF-VYL" secondAttribute="top" id="A3Y-6l-UQu"/>
                     <constraint firstItem="h6u-Cn-hCA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="AAl-gH-Q2J"/>
                     <constraint firstAttribute="bottom" secondItem="kTn-9T-EMQ" secondAttribute="bottom" constant="18.5" id="Ay8-06-aTl"/>
+                    <constraint firstItem="jZk-iH-gmq" firstAttribute="leading" secondItem="PTw-oF-VYL" secondAttribute="trailing" constant="5.5" id="CY5-JM-aGC"/>
                     <constraint firstItem="PTw-oF-VYL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20.5" id="DQA-o0-73O"/>
-                    <constraint firstItem="d6S-Ie-uWT" firstAttribute="leading" secondItem="PTw-oF-VYL" secondAttribute="trailing" constant="5.5" id="FFx-nI-OLY"/>
                     <constraint firstItem="G0N-uV-mFu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="FYD-cg-AOL"/>
                     <constraint firstAttribute="bottom" secondItem="0MG-LL-Hhq" secondAttribute="bottom" id="L8U-5t-acL"/>
                     <constraint firstItem="Mz0-o9-A0X" firstAttribute="top" secondItem="h6u-Cn-hCA" secondAttribute="bottom" constant="19.5" id="P36-YM-dRo"/>
                     <constraint firstItem="0MG-LL-Hhq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Rbk-Ky-SZV"/>
                     <constraint firstItem="h6u-Cn-hCA" firstAttribute="top" secondItem="PTw-oF-VYL" secondAttribute="bottom" constant="13.5" id="SsR-39-tOX"/>
-                    <constraint firstItem="jZk-iH-gmq" firstAttribute="top" secondItem="d6S-Ie-uWT" secondAttribute="bottom" constant="4" id="fMO-Nd-let"/>
+                    <constraint firstItem="d6S-Ie-uWT" firstAttribute="leading" secondItem="PTw-oF-VYL" secondAttribute="trailing" constant="5.5" id="ey8-oa-bUZ"/>
                     <constraint firstItem="PTw-oF-VYL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fNT-CJ-cNH"/>
-                    <constraint firstItem="jZk-iH-gmq" firstAttribute="leading" secondItem="PTw-oF-VYL" secondAttribute="trailing" constant="5.5" id="hRF-LV-ZmW"/>
+                    <constraint firstItem="jZk-iH-gmq" firstAttribute="bottom" secondItem="PTw-oF-VYL" secondAttribute="bottom" id="lLh-ee-vrV"/>
                     <constraint firstItem="kTn-9T-EMQ" firstAttribute="leading" secondItem="G0N-uV-mFu" secondAttribute="trailing" constant="17.5" id="nbw-s2-ScM"/>
+                    <constraint firstItem="jZk-iH-gmq" firstAttribute="leading" secondItem="d6S-Ie-uWT" secondAttribute="leading" id="sGe-LK-jyb"/>
                     <constraint firstAttribute="bottom" secondItem="sxU-aQ-16B" secondAttribute="bottom" constant="18.5" id="z3u-Ke-t51"/>
                     <constraint firstAttribute="bottom" secondItem="G0N-uV-mFu" secondAttribute="bottom" constant="17.5" id="zSy-IT-tZZ"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.20898184180000001" green="0.21858990189999999" blue="0.23611778019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="NameLabel" destination="d6S-Ie-uWT" id="rKI-oW-DFl"/>
+                <outlet property="NeiRongLabel" destination="h6u-Cn-hCA" id="seA-Y3-0vn"/>
+                <outlet property="Tximage" destination="PTw-oF-VYL" id="nTx-v8-gVn"/>
+            </connections>
             <point key="canvasLocation" x="19.565217391304348" y="130.58035714285714"/>
         </tableViewCell>
     </objects>

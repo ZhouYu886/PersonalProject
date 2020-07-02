@@ -21,7 +21,6 @@
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.hidden = NO;
     
-//    self.navigationController.navigationBar.opaque = YES;
     self.navigationController.navigationBar.translucent = NO;
 
 }

@@ -10,6 +10,9 @@
 #import "ZYGeRenXinXiHeader.h"
 #import "ZYGeRenXinXiTableViewCell.h"
 #import "ZYDibuTableViewCell.h"
+#import "ZYMeiWangDTTableViewCell.h"
+#import "ZYZanWuDTTableViewCell.h"
+
 
 
 @interface ZYGeRenXinXiViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -23,11 +26,13 @@
 - (void)viewWillAppear:(BOOL)animated{
 
     self.tabBarController.tabBar.hidden = YES;
+    
     self.navigationController.navigationBar.hidden = NO;
     
 //    self.navigationController.navigationBar.opaque = YES;
     self.navigationController.navigationBar.translucent = NO;
-
+    //设置tableView分割线不显示
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -38,6 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"我的动态";
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -59,12 +66,21 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     
     //设置cell标识
-     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYGeRenXinXiTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"GeRenXinXi"];
+     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYGeRenXinXiTableViewCell class]) bundle:nil]
+          forCellReuseIdentifier:@"GeRenXinXi"];
     
     //设置cell标识
-     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYDibuTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"DB"];
+     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYMeiWangDTTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"MW"];
     
+    //设置cell标识
+     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYZanWuDTTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"ZanWuDT"];
+    
+    //设置cell标识
+     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYDibuTableViewCell class]) bundle:nil]
+          forCellReuseIdentifier:@"DB"];
+
 }
+
 //设置左边点击返回上一级
 -(void)leftClick
 {
@@ -75,23 +91,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     if (indexPath.row == 0){
-        ZYGeRenXinXiTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"GeRenXinXi"];
+        ZYZanWuDTTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"ZanWuDT"];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//        self.TableView.rowHeight = 209;
+        self.tableView.rowHeight = 250;
         return cell;
-     }else if(indexPath.row == 1){
-                 ZYDibuTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"DB"];
-                 [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//                 self.TableView.rowHeight = 226;
-                 return cell;
-     }
-    return [UITableViewCell new];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

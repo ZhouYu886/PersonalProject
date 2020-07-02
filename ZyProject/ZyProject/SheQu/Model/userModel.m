@@ -7,7 +7,20 @@
 //
 
 #import "userModel.h"
+#import "talkListModel.h"
+#import "ZYFenSiModel.h"
 
 @implementation userModel
 
++(instancetype)fensi:(NSDictionary *)dict
+{
+    userModel *um = [userModel new];
+     if ([dict.allKeys containsObject:@"list"]) {
+         if ([(NSDictionary *)dict[@"list"]allKeys].count > 0) {
+             ZYFenSiModel *usmM = [ZYFenSiModel fensiWitnDict:dict];
+             um.list = usmM;
+         }
+     }
+     return um;
+}
 @end

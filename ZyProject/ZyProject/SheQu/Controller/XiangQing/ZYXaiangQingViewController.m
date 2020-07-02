@@ -49,7 +49,8 @@
     
     self.tabeleView.delegate = self;
     self.tabeleView.dataSource = self;
-    
+    //设置tableView分割线不显示
+    self.tabeleView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.title = @"详情";
     
     //设置背景颜色
@@ -80,7 +81,7 @@
           [btn1 setImage:[UIImage imageNamed:@"ic_gengduo"] forState:UIControlStateNormal];
           [btn1 addTarget:self action:@selector(rightClick) forControlEvents:UIControlEventTouchUpInside];
           //适应大小
-          [btn sizeToFit];
+          [btn1 sizeToFit];
           //设置右边rightBarButtonItem的自定义btn
           self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
 }
@@ -154,7 +155,6 @@
 {
     _SheQuM = SheQuM;
     [self.tabeleView reloadData];
-
 }
 
 
@@ -168,7 +168,7 @@
     if (section == 0) {
         return 1;
     }else if (section == 1){
-        return 1;
+        return self.talk.list.count;
     }else{
         return 1;
     }
@@ -184,8 +184,7 @@
             return cell;
     }else if (indexPath.section == 1){
      ZYPlTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"PL"];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];        
         cell.PLM = self.talk.list[indexPath.row];
                     return cell;
     }else if(indexPath.section == 2){

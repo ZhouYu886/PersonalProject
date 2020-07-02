@@ -28,9 +28,8 @@
 -(void)setHm:(ZYHangYeFBM *)Hm
 {
     _Hm = Hm;
-    self.biaoTI.text = _Hm.title;
     self.neirong.text = _Hm.content;
-    [self.Tp sd_setImageWithURL:[NSURL URLWithString:_Hm.picture] placeholderImage:[UIImage imageNamed:@"pic_geren"]];
+    self.biaoTI.text = [_Hm.content substringToIndex:10];
 }
 
 @end

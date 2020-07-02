@@ -10,6 +10,7 @@
 #import "ZYKuaiXunTableViewCell.h"
 #import "ZYZiLiaoTableViewCell.h"
 #import "ZYKxM.h"
+#import "YYModel.h"
 @interface ZYKuaiXunViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
 @property(nonatomic,strong)NSArray *kxArray;
@@ -18,15 +19,23 @@
 
 @implementation ZYKuaiXunViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self tt];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self tt];
     [self shuaxin];
     self.TableView.delegate =self;
     self.TableView.dataSource =self;
-         //设置导航栏颜色
+    self.ZJSJ = 1;
+    //设置tableView分割线不显示
+    self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
+    //设置导航栏颜色
              self.navigationController.navigationBar.barTintColor = RGB(47, 50, 55);
-        //设置背景颜色
+    //设置背景颜色
           self.view.backgroundColor = RGB(44, 48, 52);
           self.TableView.backgroundColor  = RGB(44, 48, 52);
     
@@ -40,22 +49,50 @@
 
 -(void)tt
 {
-    NSURL *url = [NSURL URLWithString:@"http://api.yysc.online/admin/getFinanceTalk?date=2020-05-23"];
-       NSURLSession *session = [NSURLSession sharedSession];
-       [[session dataTaskWithURL:url completionHandler:^(
-       NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-           NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-           NSArray *arr = dict[@"data"];
-           NSMutableArray *arrayM = [NSMutableArray array];
-        for (NSDictionary *smallDic in arr) {
-               [arrayM addObject:[ZYKxM KuaiXM:smallDic]];
-//               [arrayM addObject:[ZYHangYeFengbao HangYeFengBao:smallDic]];
-           }
-           self.kxArray = arrayM;
-           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-               [self.TableView reloadData];
-           }];
-       }]resume];
+        
+        NSDate *date=[NSDate date];
+    
+    //    http://api.yysc.online/admin/getFinanceTalk?pageNum =RequestParam&pageSize=
+    //    http://api.yysc.online/admin/getFinanceAffairs
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager GET:@"http://api.yysc.online/admin/getFinanceTalk" parameters:@{@"date":date,@"pageSize":@(self.ZJSJ*10)} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSDictionary *dada = responseObject[@"data"];
+            
+            NSMutableArray *arrayN = [NSMutableArray array];
+           for (NSDictionary *dict in dada) {
+            [arrayN addObject:[ZYKxM yy_modelWithDictionary:dict]];
+               
+            }
+            
+            self.kxArray= arrayN;
+            
+            [self.TableView reloadData];
+
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"@");
+        }];
+
+//    NSURL *url = [NSURL URLWithString:@"http://api.yysc.online/admin/getFinanceTalk?date=2020-05-23"];
+//       NSURLSession *session = [NSURLSession sharedSession];
+//       [[session dataTaskWithURL:url completionHandler:^(
+//       NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+    
+//           NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//           NSArray *arr = dict[@"data"];
+//           NSMutableArray *arrayM = [NSMutableArray array];
+//
+//
+//
+//        for (NSDictionary *smallDic in arr) {
+//               [arrayM addObject:[ZYKxM KuaiXM:smallDic]];
+////               [arrayM addObject:[ZYHangYeFengbao HangYeFengBao:smallDic]];
+//           }
+//           self.kxArray = arrayM;
+//           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//               [self.TableView reloadData];
+//           }];
+//       }]resume];
 }
 
 
@@ -157,7 +194,7 @@
     if (_kxArray != nil && ![_kxArray isKindOfClass:[NSNull class]] && _kxArray.count != 0) {
           [header setTitle:@"刷新成功" forState:MJRefreshStateRefreshing];
           [header endRefreshing];
-        
+        [self tt];
         
     }else{
         [header setTitle:@"刷新失败" forState:MJRefreshStateRefreshing];

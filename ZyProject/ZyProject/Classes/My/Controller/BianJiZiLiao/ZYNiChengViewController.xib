@@ -58,6 +58,9 @@
                             <state key="normal" title="确定">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="QueDing:" destination="-1" eventType="touchUpInside" id="0O5-pl-w6w"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

@@ -30,6 +30,20 @@
 
 @implementation ZYZhuCeViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+
+    self.tabBarController.tabBar.hidden = YES;
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+
+  self.tabBarController.tabBar.hidden = NO;
+
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -80,7 +94,8 @@
 -(void)log
 {
     [MBProgressHUD showMessage:@"正在登录..." toView:self.view];
-    [MBProgressHUD hideHUDForView:self.view];
+
+
     NSDictionary *dict = @{
           @"phone" : self.PhonTetx.text,
           @"password" : self.MiMaText.text,
@@ -89,8 +104,15 @@
           @"code" : self.YanZhenMaText.text,
           @"type" : @(1)
       };
-    
-       [LCPNetWorkManager postWithPathUrl:@"/system/register" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
+
+       [LCPNetWorkManager postWithPathUrl:@"/system/register" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result)
+    {
+           [MBProgressHUD hideHUDForView:self.view];
+           if ([result[@"success"] isEqualToNumber:@0]) {
+               [MBProgressHUD hideHUDForView:self.view];
+               [MBProgressHUD showError:result[@"msg"]];
+           }
+
             ZYusModel *userM = [ZYusModel mj_objectWithKeyValues:result[@"data"]];
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:userM.album forKey:@"album"];
@@ -106,10 +128,11 @@
             [userDefaults setObject:userM.talkCount forKey:@"talkCount"];
             [userDefaults setObject:userM.type forKey:@"type"];
             [userDefaults setObject:userM.uuid forKey:@"uuid"];
-            [self.navigationController popToViewController:[ZYMyViewController new] animated:YES];
+            [self.navigationController popViewControllerAnimated:YES];
         } failure:^(BOOL failuer, NSError *error) {
             NSLog(@"ERROR:%@",error);
-             [MBProgressHUD showError:@"用户名或密码错误"];
+             [MBProgressHUD hideHUDForView:self.view];
+             [MBProgressHUD showError:@"网络错误"];
         }];
     }
 
@@ -126,12 +149,11 @@
     self.YangJing.selected = !self.YangJing.selected;
     if (self.YangJing.selected){
         self.MiMaText.secureTextEntry = NO;
-        [self.YangJing setImage:[UIImage imageNamed:@"ic_bukejian"] forState:UIControlStateNormal];
+        [self.YangJing setImage:[UIImage imageNamed:@"ic_kejian"] forState:UIControlStateNormal];
     }else{
         self.MiMaText.secureTextEntry = YES;
-        [self.YangJing setImage:[UIImage imageNamed:@"ic_kejian"] forState:UIControlStateNormal];
+        [self.YangJing setImage:[UIImage imageNamed:@"ic_bukejian"] forState:UIControlStateNormal];
     }
-    
 }
 
 

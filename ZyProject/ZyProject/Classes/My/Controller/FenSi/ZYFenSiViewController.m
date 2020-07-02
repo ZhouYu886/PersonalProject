@@ -8,10 +8,15 @@
 
 #import "ZYFenSiViewController.h"
 #import "ZYFenSiTableViewCell.h"
+#import "userModel.h"
+#import <MJExtension/MJExtension.h>
+#import "ZYFenSiDTViewController.h"
+
+
 
 @interface ZYFenSiViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property(nonatomic,strong)NSArray *FengSiArry;
 @end
 
 @implementation ZYFenSiViewController
@@ -34,12 +39,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self get];
         //设置界面标题
         self.title = @"我的粉丝";
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        
+    
+    //设置tableView分割线不显示
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
         //控制器navigationController顶部是否显示
     //    [self.navigationController setNavigationBarHidden:NO animated:YES];
         
@@ -75,22 +84,59 @@
 }
 
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.FengSiArry.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row <= 20){
+    
       ZYFenSiTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"FS"];
       [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-      self.tableView.rowHeight = 60;  
+      self.tableView.rowHeight = 60;
+      cell.UM = self.FengSiArry[indexPath.row];
       return cell;
+}
+  
+
+
+- (void)get
+{
+    NSUserDefaults *userDefautlt = [NSUserDefaults standardUserDefaults];
+    NSNumber *dd  = [userDefautlt objectForKey:@"id"];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://api.yysc.online/user/follow/getUserFollowList" parameters:@{
+        @"userId": dd,
+        @"type" : @2,
+        @"pageNumber" : @1,
+        @"pageSize" : @10
     }
-    return [UITableViewCell new];
+        progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if(responseObject != nil){
+            self.FengSiArry = [userModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"list"]];
+            [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"failure--%@",error);
+    }];
 }
 
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row >= 0){
+        ZYFenSiDTViewController *pushFSDt = [[ZYFenSiDTViewController alloc]init];
+        
+        pushFSDt.fensiModel = self.FengSiArry[indexPath.row];
+        pushFSDt.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:pushFSDt animated:YES];
+    }
+}
 
 
 

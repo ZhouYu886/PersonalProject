@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZYGeRenXinXiHeader">
             <rect key="frame" x="0.0" y="0.0" width="376" height="155"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_geren" translatesAutoresizingMaskIntoConstraints="NO" id="bRm-fs-koo">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_geren" translatesAutoresizingMaskIntoConstraints="NO" id="bRm-fs-koo">
                     <rect key="frame" x="31" y="13" width="51" height="51"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="51" id="ISN-rp-tNH"/>
@@ -166,6 +167,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="FaTie" destination="CMm-4i-wAm" id="Vzb-h1-KcS"/>
+                <outlet property="FenSilabel" destination="s6G-lE-bHQ" id="JrB-Gu-YKi"/>
+                <outlet property="GxQmLabel" destination="Vrx-GX-HEe" id="zdC-Dn-itT"/>
+                <outlet property="GzLabel" destination="y4v-UP-1EQ" id="cJp-E5-Ia2"/>
+                <outlet property="NameLabel" destination="eZH-iQ-His" id="1HK-iB-Cm0"/>
+                <outlet property="TxImage" destination="bRm-fs-koo" id="SK4-1A-QUT"/>
+            </connections>
             <point key="canvasLocation" x="128.98550724637681" y="96.09375"/>
         </view>
     </objects>

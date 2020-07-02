@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@class projectModel;
+@class projectModel,ListModel,ZYFenSiModel;
 @interface userModel : NSObject
 @property (nonatomic, strong) NSString *album;
 @property (nonatomic, strong) NSNumber *fansCount;
@@ -25,6 +25,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *talkCount;
 @property (nonatomic, strong) NSNumber *type;
 @property (nonatomic, strong) NSString *uuid;
+
+
+
+@property(nonatomic,strong)ZYFenSiModel *list;
+
+
+
+
++(instancetype)fensi:(NSDictionary *)dict;
+
+
+
 
 @end
 

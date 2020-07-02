@@ -33,6 +33,9 @@
     //控制器navigationController顶部是否显示
 //    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    //设置tableView分割线不显示
+    self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
     //设置界面标题
        self.title = @"资讯";
        

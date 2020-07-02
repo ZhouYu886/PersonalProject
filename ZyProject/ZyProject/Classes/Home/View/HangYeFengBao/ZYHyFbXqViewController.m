@@ -17,6 +17,21 @@
 
 @implementation ZYHyFbXqViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+
+    self.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
+//  self.navigationController.navigationBar.opaque = YES;
+    self.navigationController.navigationBar.translucent = NO;
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+
+  self.tabBarController.tabBar.hidden = NO;
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

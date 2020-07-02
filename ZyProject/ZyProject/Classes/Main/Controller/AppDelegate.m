@@ -23,8 +23,10 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     ZyTabBarController *vc = [ZyTabBarController new];
+//    [vc.tabBar setBackgroundImage:[UIImage imageNamed:@"tab"]];
+//    vc.tabBarItem.image = [UIImage imageNamed:@"tab"];
 
-    
+
     [self.window setRootViewController:vc];
     [self.window makeKeyAndVisible];
     

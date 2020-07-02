@@ -12,6 +12,7 @@
 #import "ZYFaBuViewController.h"
 #import "ZYXaiangQingViewController.h"
 #import "ZYSheQuM.h"
+#import "ZYPingLunTableViewCell.h"
 
 @interface ZYSheQuViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
@@ -35,7 +36,8 @@
     [self shuaxin];
     //设置界面标题
     self.title = @"社区";
-    
+    //设置tableView分割线不显示
+    self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.TableView.delegate = self;
     self.TableView.dataSource =self;
 
@@ -115,7 +117,6 @@
 - (IBAction)PushFaBu:(UIButton *)sender
 {
     ZYFaBuViewController *PushaFaBu = [ZYFaBuViewController new];
-    
     [self.navigationController pushViewController:PushaFaBu animated:YES];
 }
 

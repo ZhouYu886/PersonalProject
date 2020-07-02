@@ -39,6 +39,9 @@
    self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    //设置tableView分割线不显示
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
     self.title = @"详情";
          //设置导航栏颜色
              self.navigationController.navigationBar.barTintColor = RGB(47, 50, 55);
@@ -81,5 +84,8 @@
     cell.ZiXunM = _ZiXunJingXuanM;
      return cell;
 }
+
+
+
 
 @end

@@ -14,9 +14,8 @@
 +(instancetype)HYFBM:(NSDictionary *)dict
 {
        ZYHangYeFBM *HYFB = [ZYHangYeFBM new];
-    HYFB.title = dict[@"title"];
     HYFB.content = dict[@"content"];
-    HYFB.picture = dict[@"picture"];
+    HYFB.BT = dict[@"id"];
     return HYFB;
 }
 

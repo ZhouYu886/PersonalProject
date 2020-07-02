@@ -10,8 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ListModel,ZYNameModel;
 @interface ZYMyViewController : BaseViewController
+@property(nonatomic,strong)ListModel *list;
+@property(nonatomic,strong)ZYNameModel *NameM;
 
+@property (nonatomic, copy)void (^didSureBtnBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END

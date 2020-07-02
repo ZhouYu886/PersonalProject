@@ -105,7 +105,7 @@
                     <state key="normal" image="ic_bukejian"/>
                     <state key="selected" image="ic_kejian"/>
                     <connections>
-                        <action selector="YanJing:" destination="-1" eventType="touchUpInside" id="57Q-Gd-uBL"/>
+                        <action selector="YanJing:" destination="-1" eventType="touchUpInside" id="eVj-YA-mby"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘记密码？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEB-gr-KhO">

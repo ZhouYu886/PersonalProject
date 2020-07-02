@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,9 +25,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称/编码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoO-qB-5gQ">
-                    <rect key="frame" x="20" y="13" width="66" height="18"/>
+                    <rect key="frame" x="20" y="13" width="70" height="18"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="66" id="BiB-yQ-ad6"/>
+                        <constraint firstAttribute="height" constant="18" id="3kD-Z8-7fv"/>
+                        <constraint firstAttribute="width" constant="70" id="qTW-XC-uGx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,12 +48,10 @@
             <constraints>
                 <constraint firstItem="IHc-bS-OCS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HHH-ec-n6E"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Dr3-UM-HRK" secondAttribute="bottom" constant="13" id="KPH-g3-1ek"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DoO-qB-5gQ" secondAttribute="bottom" constant="13" id="Mui-v9-qBc"/>
-                <constraint firstItem="DoO-qB-5gQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Qjl-QP-KOK"/>
+                <constraint firstItem="DoO-qB-5gQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VE9-JB-ca4"/>
+                <constraint firstItem="DoO-qB-5gQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="h3O-gT-55v"/>
                 <constraint firstAttribute="trailing" secondItem="Dr3-UM-HRK" secondAttribute="trailing" constant="20" id="hcj-ko-hOF"/>
                 <constraint firstItem="IHc-bS-OCS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="m2I-tY-yI5"/>
-                <constraint firstItem="DoO-qB-5gQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nJM-Ha-bPV"/>
-                <constraint firstItem="DoO-qB-5gQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="qCh-1s-hz0"/>
                 <constraint firstItem="Dr3-UM-HRK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="zVI-dO-r7S"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
