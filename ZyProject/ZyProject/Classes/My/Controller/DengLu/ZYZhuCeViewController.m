@@ -192,5 +192,11 @@
     
 }
 
+//点击空白退出键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 
 @end

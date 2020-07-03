@@ -155,9 +155,7 @@
             [userDefaults setObject:userM.type forKey:@"type"];
             [userDefaults setObject:userM.uuid forKey:@"uuid"];
             NSLog(@"%@",userM.phone);
-            
-            self.tabBarController.selectedIndex = 3;
-//          [self.navigationController popToRootViewControllerAnimated:self.tabBarController.selectedIndex =1];
+          [self.navigationController popToRootViewControllerAnimated:YES];
         } failure:^(BOOL failuer, NSError *error) {
              [MBProgressHUD hideHUDForView:self.view];
              [MBProgressHUD showError:@"账户或密码错误"];
@@ -186,6 +184,12 @@
     }else {
         self.DengLuBtn.enabled = YES;
     }
+}
+
+//点击空白退出键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
 

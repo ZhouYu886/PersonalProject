@@ -223,7 +223,7 @@
     }else if(section == 2){
         return 1;
     }else if (section == 3){
-        return self.ShuziArray.count;
+        return 5;
     }else{
         return self.ZiXunArray.count;
     }
