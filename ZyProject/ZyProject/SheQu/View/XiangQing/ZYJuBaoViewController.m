@@ -85,7 +85,9 @@
            NSString *objcName = [NSString stringWithUTF8String:name];
            NSLog(@"%d : %@",i,objcName);
        }
-       
+    
+
+
       
     
        //设置图片点击手势
@@ -178,22 +180,43 @@
 
 - (IBAction)JuBao:(UIButton *)sender
 {
-        [MBProgressHUD showMessage:@"举报成功" toView:self.view];
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSNumber *dd = [userDefaults objectForKey:@"id"];
-        NSDictionary *dict = @{
-            @"userId" : dd,
-            @"talkId" : self.jubaotalk,
-            @"content" : self.textView.text,
-        };
-        [LCPNetWorkManager postWithPathUrl:@"/user/talk/reportTalk" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
-            [MBProgressHUD hideHUDForView:self.view];
-            self.textView.text = @"";
-        } failure:^(BOOL failuer, NSError *error) {
-            [MBProgressHUD showError:@"举报失败"];
-            [MBProgressHUD hideHUDForView:self.view];
-        }];
-        
+    
+    if ([self.textView.text length] > 0) {
+     
+         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+         NSNumber *dd = [userDefaults objectForKey:@"id"];
+         NSDictionary *dict = @{
+             @"userId" : dd,
+             @"talkId" : self.jubaotalk,
+             @"content" : self.textView.text,
+         };
+         [LCPNetWorkManager postWithPathUrl:@"/user/talk/reportTalk" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
+             NSLog(@"%@",result);
+             [MBProgressHUD showSuccess:@"举报成功"];
+             
+         } failure:^(BOOL failuer, NSError *error) {
+            
+         }];
+     }
+     else{
+         [MBProgressHUD showError:@"你输入举报的内容太少了哦~~"];
+     }
+
+//    [MBProgressHUD showMessage:@"举报成功" toView:self.view];
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    NSNumber *dd = [userDefaults objectForKey:@"id"];
+//    NSDictionary *dict = @{
+//        @"userId" : dd,
+//        @"talkId" : self.jubaotalk,
+//        @"content" : self.textView.text,
+//    };
+//    [LCPNetWorkManager postWithPathUrl:@"/user/talk/reportTalk" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
+//        [MBProgressHUD hideHUDForView:self.view];
+//        self.textView.text = @"";
+//    } failure:^(BOOL failuer, NSError *error) {
+//        [MBProgressHUD showError:@"举报失败"];
+//        [MBProgressHUD hideHUDForView:self.view];
+//    }];
 }
     
 

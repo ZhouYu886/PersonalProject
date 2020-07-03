@@ -186,6 +186,7 @@
     
     NSNumber *dd = [userDefaults objectForKey:@"id"];
     
+      
     NSDictionary *dict = @{
         @"userId" : dd,
         @"content" : self.textView.text,
@@ -193,9 +194,11 @@
     };
     
     [LCPNetWorkManager postWithPathUrl:@"/user/talk/publishTalk" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
-        NSLog(@"%@",result);
+        [MBProgressHUD showMessage:@"发布成功" toView:self.view];
+        [MBProgressHUD hideHUDForView:self.view];
     } failure:^(BOOL failuer, NSError *error) {
-        NSLog(@"发布出错");
+                [MBProgressHUD showError:@"发布失败"];
+                [MBProgressHUD hideHUDForView:self.view];
     }];
  
 }
