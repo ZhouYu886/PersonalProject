@@ -20,9 +20,20 @@
 {
     _KxM = KxM;
     self.NeiRong.text = _KxM.content;
-//    self.ShiJIan.text = _KxM.time;
+    self.ShiJIan.text = [self stringTimeWithTimeString:KxM.time];
     self.BiaoTI.text = [_KxM.content substringToIndex:10];
 
+}
+
+- (NSString *)stringTimeWithTimeString:(NSString *)string{
+    NSInteger t_integer = [string integerValue] / 1000;
+    NSDate *date = [[NSDate alloc]initWithTimeIntervalSince1970:t_integer];
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    //格式化成目标时间格式
+    [formatter setDateFormat:@"HH:mm:ss"];
+    NSString  *timeString  = [formatter stringFromDate:date];
+    return timeString;
 }
 
 

@@ -132,7 +132,7 @@
         } failure:^(BOOL failuer, NSError *error) {
             NSLog(@"ERROR:%@",error);
              [MBProgressHUD hideHUDForView:self.view];
-             [MBProgressHUD showError:@"网络错误"];
+             [MBProgressHUD showError:@"账号或验证码错误"];
         }];
     }
 
@@ -182,7 +182,7 @@
 
 - (IBAction)TxYanZhengMa:(UIButton *)sender
 {
-    ZYTXYZMViewController *TxYzM = [ZYTXYZMViewController new];
+   ZYTXYZMViewController *TxYzM = [ZYTXYZMViewController new];
    ZYusModel *userm = [[ZYusModel alloc]init];
    userm.phone = _PhonTetx.text;
    userm.projectKey = _Project;

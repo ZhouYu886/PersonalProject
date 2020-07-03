@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYXaiangQingViewController">
             <connections>
+                <outlet property="DiBuYueShu" destination="DPQ-3N-woB" id="sLq-mg-O3H"/>
+                <outlet property="PingLunTextF" destination="fYF-MW-BOO" id="Ocx-ze-xtM"/>
                 <outlet property="tabeleView" destination="Kmg-B9-O2X" id="ZGw-o5-lfl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,19 +22,59 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-B9-O2X">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="803"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-Sv-xv4">
+                    <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入评论" textAlignment="natural" minimumFontSize="17" background="矩形 11 拷贝 2" translatesAutoresizingMaskIntoConstraints="NO" id="fYF-MW-BOO">
+                            <rect key="frame" x="20" y="11" width="255" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="255" id="UUs-B3-DdW"/>
+                                <constraint firstAttribute="height" constant="27" id="tyo-L5-zOf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvF-e6-zEP">
+                            <rect key="frame" x="335" y="11" width="54" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="WmL-TY-3XD"/>
+                                <constraint firstAttribute="width" constant="54" id="jpo-d7-2iN"/>
+                            </constraints>
+                            <state key="normal" image="btn_fasong"/>
+                            <connections>
+                                <action selector="FaBU:" destination="-1" eventType="touchUpInside" id="eGB-5X-PjT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1077897027" green="0.1130809262" blue="0.1276659071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="fYF-MW-BOO" firstAttribute="centerY" secondItem="Mgg-Sv-xv4" secondAttribute="centerY" id="46y-yi-JOY"/>
+                        <constraint firstAttribute="height" constant="49" id="HsP-Qp-zVr"/>
+                        <constraint firstAttribute="trailing" secondItem="XvF-e6-zEP" secondAttribute="trailing" constant="25" id="P9l-F4-Boe"/>
+                        <constraint firstItem="fYF-MW-BOO" firstAttribute="leading" secondItem="Mgg-Sv-xv4" secondAttribute="leading" constant="20" id="Zd5-N5-Esn"/>
+                        <constraint firstItem="XvF-e6-zEP" firstAttribute="centerY" secondItem="Mgg-Sv-xv4" secondAttribute="centerY" id="arM-yN-4Oc"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.16720420120000001" green="0.1721411645" blue="0.18580088019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="Kmg-B9-O2X" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="2GE-iz-wXX"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Kmg-B9-O2X" secondAttribute="bottom" id="FWP-8X-ZGb"/>
-                <constraint firstItem="Kmg-B9-O2X" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="T3B-XO-UP7"/>
-                <constraint firstItem="Kmg-B9-O2X" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="xFY-yD-dmk"/>
+                <constraint firstItem="Mgg-Sv-xv4" firstAttribute="top" secondItem="Kmg-B9-O2X" secondAttribute="bottom" id="AQs-w6-Cn0"/>
+                <constraint firstAttribute="bottom" secondItem="Mgg-Sv-xv4" secondAttribute="bottom" id="DPQ-3N-woB"/>
+                <constraint firstItem="Kmg-B9-O2X" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Dff-3s-hwt"/>
+                <constraint firstItem="Kmg-B9-O2X" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="bmB-la-De0"/>
+                <constraint firstItem="Mgg-Sv-xv4" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="pQg-BN-Sr8"/>
+                <constraint firstItem="Kmg-B9-O2X" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="pQw-VJ-CaJ"/>
+                <constraint firstItem="Mgg-Sv-xv4" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="pbh-TA-gtk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="131.8840579710145" y="121.875"/>
         </view>
     </objects>
+    <resources>
+        <image name="btn_fasong" width="54" height="27"/>
+        <image name="矩形 11 拷贝 2" width="255" height="27"/>
+    </resources>
 </document>

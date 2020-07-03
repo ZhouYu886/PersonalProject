@@ -155,7 +155,9 @@
             [userDefaults setObject:userM.type forKey:@"type"];
             [userDefaults setObject:userM.uuid forKey:@"uuid"];
             NSLog(@"%@",userM.phone);
-          [self.navigationController popToRootViewControllerAnimated:YES];
+            
+            self.tabBarController.selectedIndex = 3;
+//          [self.navigationController popToRootViewControllerAnimated:self.tabBarController.selectedIndex =1];
         } failure:^(BOOL failuer, NSError *error) {
              [MBProgressHUD hideHUDForView:self.view];
              [MBProgressHUD showError:@"账户或密码错误"];

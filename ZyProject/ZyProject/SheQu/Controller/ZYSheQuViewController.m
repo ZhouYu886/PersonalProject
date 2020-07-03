@@ -12,12 +12,16 @@
 #import "ZYFaBuViewController.h"
 #import "ZYXaiangQingViewController.h"
 #import "ZYSheQuM.h"
+#import "YYModel.h"
 #import "ZYPingLunTableViewCell.h"
+#import "ZYDengluViewController.h"
 
-@interface ZYSheQuViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ZYSheQuViewController ()<UITableViewDataSource,UITableViewDelegate,ZYTuiJianDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
-@property(nonatomic,strong)NSArray *SheQuArray;
+@property(nonatomic,strong)NSMutableArray *SheQuArray;
 @property(assign,nonatomic)int ZJSJ;
+@property (nonatomic,strong)UIView *tempView;
+@property(assign,nonatomic)int gg;
 @end
 
 @implementation ZYSheQuViewController
@@ -25,42 +29,45 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self tt];
+    [self shuaxin];
      self.navigationController.navigationBar.hidden = NO;
     self.navigationController.navigationBar.translucent = NO;
+}
+
+-(void)setSQarray:(NSMutableArray *)SQarray
+{
+    _SheQuArray = SQarray;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self tt];
-    [self shuaxin];
+    self.ZJSJ = 1;
+    self.gg = 1;
     //设置界面标题
     self.title = @"社区";
     //设置tableView分割线不显示
     self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.TableView.delegate = self;
     self.TableView.dataSource =self;
-
-         //    设置导航条标题颜色
-            [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-            self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-      
-            
-                 //设置导航栏颜色
-         self.navigationController.navigationBar.barTintColor = RGB(44, 48, 52);
-
-      
+    
+    //    设置导航条标题颜色
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    //设置导航栏颜色
+    self.navigationController.navigationBar.barTintColor = RGB(44, 48, 52);
+    
     //设置背景颜色
-      self.view.backgroundColor = RGB(44, 48, 52);
-      self.TableView.backgroundColor  = RGB(44, 48, 52);
-    
-    
-    //设置cell标识
-     [self.TableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYReBangTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"ReTui"];
+    self.view.backgroundColor = RGB(44, 48, 52);
+    self.TableView.backgroundColor  = RGB(44, 48, 52);
     
     //设置cell标识
-     [self.TableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYTuiJianTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"TuiJian"];
+    [self.TableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYReBangTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"ReTui"];
     
+    //设置cell标识
+    [self.TableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYTuiJianTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"TuiJian"];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -89,6 +96,7 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         cell.SqM = self.SheQuArray[indexPath.row];
         self.TableView.rowHeight = 209;
+        cell.delegate = self;
         return cell;
     }
     return [UITableViewCell new];
@@ -114,6 +122,7 @@
 }
 
 
+
 - (IBAction)PushFaBu:(UIButton *)sender
 {
     ZYFaBuViewController *PushaFaBu = [ZYFaBuViewController new];
@@ -126,6 +135,7 @@
         ZYXaiangQingViewController *pushXq = [[ZYXaiangQingViewController alloc]init];
         pushXq.SheQuM = self.SheQuArray[indexPath.row];
         pushXq.hidesBottomBarWhenPushed = YES;
+        pushXq.SQarray = self.SheQuArray;
         [self.navigationController pushViewController:pushXq animated:YES];
     }
     
@@ -140,26 +150,41 @@
 
 -(void)tt
 {
-    NSURL *url = [NSURL URLWithString:@"http://api.yysc.online/user/talk/getTalkListByProject?pageNumber&pageSize&project=futures"];
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        NSArray *arr = dict[@"data"][@"list"];
-        NSMutableArray *arrayM = [NSMutableArray array];
-        for (NSDictionary *smallDic in arr) {
-            [arrayM addObject:[ZYSheQuM SheQu:smallDic]];
+    [LCPNetWorkManager getWithPathUrl:@"/user/talk/getTalkListByProject?project" parameters:@{@"pageNumber": @(self.gg),@"pageSize" :@(self.ZJSJ *10),
+    } queryParams:nil Header:nil success:^(BOOL success, id result) {
+        
+        NSDictionary *dada = result[@"data"][@"list"];
+        NSMutableArray *arrayN = [NSMutableArray array];
+        for (NSDictionary *dict in dada) {
+            [arrayN addObject:[ZYSheQuM SheQu:dict]];
+            
         }
-        self.SheQuArray = arrayM;
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.TableView reloadData];
-        }];
-    }]resume];
+        self.SheQuArray= arrayN;
+        
+        [self.TableView reloadData];
+        
+    } failure:^(BOOL failuer, NSError *error) {
+        
+    }];
+//    NSURL *url = [NSURL URLWithString:@"http://api.yysc.online/user/talk/getTalkListByProject?pageNumber&pageSize&project=futures"];
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    [[session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//        NSArray *arr = dict[@"data"][@"list"];
+//        NSMutableArray *arrayM = [NSMutableArray array];
+//        for (NSDictionary *smallDic in arr) {
+//            [arrayM addObject:[ZYSheQuM SheQu:smallDic]];
+//        }
+//        self.SheQuArray = arrayM;
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            [self.TableView reloadData];
+//        }];
+//    }]resume];
 
 }
 
 - (void)shuaxin{
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData:)];
-              
               // 设置文字
               [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
               [header setTitle:@"即将刷新" forState:MJRefreshStatePulling];
@@ -172,9 +197,6 @@
               // 设置颜色
               header.stateLabel.textColor = [UIColor whiteColor];
               header.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
-
-              // 马上进入刷新状态
-        //      [header beginRefreshing];
 
               // 设置刷新控件
               self.TableView.mj_header = header;
@@ -210,19 +232,19 @@
      [footer endRefreshing];
     });
         [self tt];
-//        [self JsonTocaijin];
+
 
 }
 
 -(void)loadNewData:(MJRefreshNormalHeader *)header{
+    self.gg++;
+    self.ZJSJ = 1;
     [self tt];
 //    [self JsonTocaijin];
     
     if (_SheQuArray != nil && ![_SheQuArray isKindOfClass:[NSNull class]] && _SheQuArray.count != 0) {
           [header setTitle:@"刷新成功" forState:MJRefreshStateRefreshing];
           [header endRefreshing];
-        
-        
     }else{
         [header setTitle:@"刷新失败" forState:MJRefreshStateRefreshing];
         [header endRefreshing];
@@ -230,8 +252,16 @@
 
 }
 
--(void)delayMethod{
+-(void)delayMethod
+{
  self.TableView.mj_footer.alpha = 0.01;
+}
+
+-(void)clickBtn:(ZYTuiJianTableViewCell*)cell
+{
+    NSIndexPath *Remove = [self.TableView indexPathForCell:cell];
+    [self.SheQuArray removeObjectAtIndex:Remove.row];
+    [self.TableView reloadData];
 }
 
 

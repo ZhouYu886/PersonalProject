@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *QuXiao;
 @property (weak, nonatomic) IBOutlet UIButton *QueDing;
 @property (weak, nonatomic) IBOutlet UIImageView *TxYzM;
-
 @property (weak, nonatomic) IBOutlet UITextField *YaZmTxt;
 @end
 

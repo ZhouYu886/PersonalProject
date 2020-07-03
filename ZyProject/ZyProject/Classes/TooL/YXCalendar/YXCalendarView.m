@@ -182,6 +182,7 @@ static CGFloat const weeksH = 30;       //周高度
     
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, yearMonthH, ViewW, 1)];
     line.backgroundColor = RGB(44, 47, 51);
+//    line.backgroundColor = UIColor.redColor;
     line.alpha = 0.3;
     [self addSubview:line];
     

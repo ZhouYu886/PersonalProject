@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYJuBaoViewController">
+            <connections>
+                <outlet property="AView" destination="fbk-kZ-r08" id="TGH-kE-k90"/>
+                <outlet property="Aimage" destination="7Ps-mK-tN8" id="W3t-AH-8vT"/>
+                <outlet property="BView" destination="02H-C8-bke" id="Pbm-EM-ZXV"/>
+                <outlet property="Bimage" destination="ZNm-L5-0GD" id="5yU-uj-1e1"/>
+                <outlet property="JUbao" destination="2jl-Ld-d0k" id="nRe-PR-A37"/>
+                <outlet property="textView" destination="BXJ-1g-eLj" id="6uW-aX-yFZ"/>
+                <outlet property="view" destination="hkw-Hy-6m5" id="Tjz-1y-BDx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hkw-Hy-6m5">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFP-ke-Q6L">
+                    <rect key="frame" x="10" y="54" width="394" height="832"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXJ-1g-eLj">
+                            <rect key="frame" x="10" y="10" width="374" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="YnG-dd-BNm"/>
+                            </constraints>
+                            <color key="textColor" red="0.45953643319999998" green="0.46371132139999999" blue="0.46757435800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-kZ-r08">
+                            <rect key="frame" x="21.5" y="148" width="100" height="100"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_tianjiatupian" translatesAutoresizingMaskIntoConstraints="NO" id="7Ps-mK-tN8">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="1nt-AH-e2s"/>
+                                <constraint firstAttribute="trailing" secondItem="7Ps-mK-tN8" secondAttribute="trailing" id="6FK-lc-9W1"/>
+                                <constraint firstAttribute="height" constant="100" id="8xH-rR-YGe"/>
+                                <constraint firstItem="7Ps-mK-tN8" firstAttribute="leading" secondItem="fbk-kZ-r08" secondAttribute="leading" id="9iu-av-AdX"/>
+                                <constraint firstItem="7Ps-mK-tN8" firstAttribute="top" secondItem="fbk-kZ-r08" secondAttribute="top" id="aDD-ia-zUb"/>
+                                <constraint firstAttribute="bottom" secondItem="7Ps-mK-tN8" secondAttribute="bottom" id="eLs-Tl-ZFE"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02H-C8-bke">
+                            <rect key="frame" x="131.5" y="148" width="100" height="100"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pic_tianjiatupian" translatesAutoresizingMaskIntoConstraints="NO" id="ZNm-L5-0GD">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Hqe-PK-Sy6"/>
+                                <constraint firstAttribute="width" constant="100" id="VqL-sI-VnU"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jl-Ld-d0k">
+                            <rect key="frame" x="20" y="398" width="354" height="50"/>
+                            <color key="backgroundColor" red="0.2358524501" green="0.25000402329999999" blue="0.27142336960000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Q2z-9q-zoi"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <state key="normal" title="举报">
+                                <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="JuBao:" destination="-1" eventType="touchUpInside" id="1KQ-cS-Nv4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.20898184180000001" green="0.21858990189999999" blue="0.23611778019999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="fbk-kZ-r08" firstAttribute="top" secondItem="BXJ-1g-eLj" secondAttribute="bottom" constant="10" id="COp-gu-JJe"/>
+                        <constraint firstItem="2jl-Ld-d0k" firstAttribute="leading" secondItem="rFP-ke-Q6L" secondAttribute="leading" constant="20" id="FUv-sx-taJ"/>
+                        <constraint firstItem="02H-C8-bke" firstAttribute="top" secondItem="BXJ-1g-eLj" secondAttribute="bottom" constant="10" id="IT6-6I-gJP"/>
+                        <constraint firstAttribute="trailing" secondItem="2jl-Ld-d0k" secondAttribute="trailing" constant="20" id="LRR-bb-37C"/>
+                        <constraint firstItem="fbk-kZ-r08" firstAttribute="leading" secondItem="rFP-ke-Q6L" secondAttribute="leading" constant="21.5" id="Ldn-Qn-N5e"/>
+                        <constraint firstItem="BXJ-1g-eLj" firstAttribute="top" secondItem="rFP-ke-Q6L" secondAttribute="top" constant="10" id="Qig-aN-OF4"/>
+                        <constraint firstItem="2jl-Ld-d0k" firstAttribute="top" secondItem="02H-C8-bke" secondAttribute="bottom" constant="150" id="STZ-t8-a04"/>
+                        <constraint firstItem="BXJ-1g-eLj" firstAttribute="leading" secondItem="rFP-ke-Q6L" secondAttribute="leading" constant="10" id="Z0g-NO-OMw"/>
+                        <constraint firstAttribute="trailing" secondItem="BXJ-1g-eLj" secondAttribute="trailing" constant="10" id="pOA-GB-tix"/>
+                        <constraint firstItem="02H-C8-bke" firstAttribute="leading" secondItem="fbk-kZ-r08" secondAttribute="trailing" constant="10" id="zmY-YX-r73"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.17673757670000001" green="0.18157103660000001" blue="0.19956567880000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="FcQ-P6-vE4" firstAttribute="trailing" secondItem="rFP-ke-Q6L" secondAttribute="trailing" constant="10" id="NSR-av-OFL"/>
+                <constraint firstItem="rFP-ke-Q6L" firstAttribute="top" secondItem="FcQ-P6-vE4" secondAttribute="top" constant="10" id="U5m-tO-pSh"/>
+                <constraint firstItem="rFP-ke-Q6L" firstAttribute="leading" secondItem="FcQ-P6-vE4" secondAttribute="leading" constant="10" id="Y3g-Vt-LLI"/>
+                <constraint firstAttribute="bottom" secondItem="rFP-ke-Q6L" secondAttribute="bottom" constant="10" id="j20-31-gCh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="FcQ-P6-vE4"/>
+            <point key="canvasLocation" x="131.8840579710145" y="113.83928571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pic_tianjiatupian" width="100" height="100"/>
+    </resources>
+</document>

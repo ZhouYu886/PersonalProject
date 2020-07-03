@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,16 +109,6 @@
                         <action selector="YanJing:" destination="-1" eventType="touchUpInside" id="eVj-YA-mby"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘记密码？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEB-gr-KhO">
-                    <rect key="frame" x="326.5" y="475" width="52" height="12"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="12" id="hC9-ov-MAQ"/>
-                        <constraint firstAttribute="width" constant="52" id="mh9-5b-NnL"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" red="0.92195767159999997" green="0.34149605039999997" blue="0.31574493650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsX-p2-w8K">
                     <rect key="frame" x="47" y="540.5" width="320" height="70"/>
                     <constraints>
@@ -147,6 +138,20 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcq-mP-WZ0">
+                    <rect key="frame" x="329" y="474.5" width="52" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="MDB-ya-1l0"/>
+                        <constraint firstAttribute="width" constant="52" id="RIh-pH-GmV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="忘记密码？">
+                        <color key="titleColor" red="0.8745264411" green="0.33654916289999998" blue="0.31756281850000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="WangJiMIMa:" destination="-1" eventType="touchUpInside" id="2U6-fx-yKT"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -156,6 +161,7 @@
                 <constraint firstItem="bne-xz-wwE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="37.5" id="9aN-vJ-3i8"/>
                 <constraint firstAttribute="bottom" secondItem="uiU-Cf-0pe" secondAttribute="bottom" constant="6.5" id="9wc-KA-FIw"/>
                 <constraint firstItem="1fv-uX-hT3" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="131" id="Abs-cd-NJG"/>
+                <constraint firstItem="Pcq-mP-WZ0" firstAttribute="top" secondItem="bne-xz-wwE" secondAttribute="bottom" constant="5" id="Bde-dm-jj8"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ddC-vJ-4PS" secondAttribute="trailing" constant="37.5" id="F7P-Qp-As7"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="H2e-h6-fak" secondAttribute="trailing" constant="49" id="GEx-oW-2tC"/>
                 <constraint firstItem="oLM-bZ-m8o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GPS-AH-Dwv"/>
@@ -173,9 +179,8 @@
                 <constraint firstItem="CwL-HF-yha" firstAttribute="leading" secondItem="uiU-Cf-0pe" secondAttribute="trailing" constant="6.5" id="RfL-8j-I6h"/>
                 <constraint firstItem="bne-xz-wwE" firstAttribute="top" secondItem="H2e-h6-fak" secondAttribute="bottom" constant="9" id="YZC-m9-BUP"/>
                 <constraint firstItem="ddC-vJ-4PS" firstAttribute="top" secondItem="s0B-Mp-hd7" secondAttribute="bottom" constant="10.5" id="YjR-xa-SUE"/>
-                <constraint firstItem="ZEB-gr-KhO" firstAttribute="top" secondItem="bne-xz-wwE" secondAttribute="bottom" constant="5.5" id="cuL-SZ-IpF"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Pcq-mP-WZ0" secondAttribute="trailing" constant="33" id="Yjt-Xo-9yH"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xLM-vX-UGn" secondAttribute="trailing" constant="37.5" id="deg-Qh-ffR"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ZEB-gr-KhO" secondAttribute="trailing" constant="35.5" id="eRF-Mc-sgU"/>
                 <constraint firstItem="xLM-vX-UGn" firstAttribute="top" secondItem="ddC-vJ-4PS" secondAttribute="bottom" constant="1" id="fuj-GC-qDf"/>
                 <constraint firstItem="oLM-bZ-m8o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hw7-1a-LQn"/>
                 <constraint firstItem="Z0P-4l-V2r" firstAttribute="top" secondItem="zS4-VT-ALa" secondAttribute="bottom" constant="84.5" id="kOj-QO-mwy"/>

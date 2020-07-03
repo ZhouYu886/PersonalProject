@@ -16,14 +16,18 @@
 #import "talkListModel.h"
 #import "userModel.h"
 #import <MJExtension/MJExtension.h>
+#import "ZYJuBaoViewController.h"
+#import "MBProgressHUD+XMG.h"
+#import "ZYSheQuViewController.h"
 
 
-@interface ZYXaiangQingViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ZYXaiangQingViewController ()<UITableViewDelegate,UITableViewDataSource,ZYPingLunDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tabeleView;
 
 @property (nonatomic, strong) ZYPingLunHeaderView *header;
 @property (nonatomic ,strong) talkListModel *talk;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *DiBuYueShu;
+@property (weak, nonatomic) IBOutlet UITextField *PingLunTextF;
 
 @end
 
@@ -84,7 +88,13 @@
           [btn1 sizeToFit];
           //设置右边rightBarButtonItem的自定义btn
           self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TanChu:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TanHui:) name:UIKeyboardWillHideNotification object:nil];
+    
+          
 }
+
 
 - (void)PLJosnToOc
 {
@@ -96,10 +106,9 @@
 -(void)getTalkDisscussListWithParmas:(NSDictionary *)parmas
 {
     [LCPNetWorkManager postWithPathUrl:@"/user/talk/getCommentList" parameters:parmas queryParams:nil Header:nil success:^(BOOL success, id result) {
-        self.talk= [talkListModel mj_objectWithKeyValues:result[@"data"]];
+        self.talk = [talkListModel mj_objectWithKeyValues:result[@"data"]];
         [self.tabeleView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
    } failure:^(BOOL failuer, NSError *error) {
-        
     }];
 }
 
@@ -142,6 +151,8 @@
        [self presentViewController:aletVC animated:YES
                         completion:nil];
     
+
+    
 }
 
 //左边返回
@@ -157,6 +168,39 @@
     [self.tabeleView reloadData];
 }
 
+-(void)pingbi:(ZYPingLunTableViewCell *)cell
+{
+    [MBProgressHUD showMessage:@"屏蔽成功" toView:self.view];
+    
+    //延时执行代码
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+   {
+              //隐藏提醒框
+       [MBProgressHUD hideHUD];
+       NSIndexPath *Remove = [self.tabeleView indexPathForCell:cell];
+       [self.SQarray removeObjectAtIndex:Remove.row];
+       [self.navigationController popViewControllerAnimated:YES];
+          }
+      });
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSNumber *dd = [userDefaults objectForKey:@"id"];
+    NSDictionary *dict = @{
+        @"userId" : dd,
+        @"data" : self.SheQuM.talkId,
+        @"type" : @2,
+    };
+    
+    [LCPNetWorkManager postWithPathUrl:@"/user/personal/block" parameters:nil queryParams:dict Header:nil success:^(BOOL success, id result) {
+        
+        
+    } failure:^(BOOL failuer, NSError *error) {
+        [MBProgressHUD showMessage:@"屏蔽失败"];
+        
+    }];
+    
+    
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -179,6 +223,7 @@
     if (indexPath.section == 0 ) {
             ZYPingLunTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"XiangQing"];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell.delegate = self;
 
         cell.SM = _SheQuM;
             return cell;
@@ -205,6 +250,18 @@
         return 0;
     }
 }
+- (IBAction)FaBU:(UIButton *)sender
+{
+    self.PingLunTextF.text = @"";
+      [_PingLunTextF resignFirstResponder];
+    
+//        开启键盘
+//        becomeFirstResponder
+//        关闭键盘
+//        resignFirstResponder
+    
+}
+
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -223,6 +280,31 @@
     [self.view endEditing:YES];
 }
 
+- (void)TanChu:(NSNotification *)noti{
+    // 获取键盘的高度  首先获取当前键盘的 Rect
+        CGRect kbFram = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        CGFloat kbHeight = kbFram.size.height;
+    // 把约束改掉
+    self.DiBuYueShu.constant = kbHeight ;
+      [UIView animateWithDuration:1 delay:0 options: UIViewAnimationOptionCurveEaseInOut  animations:^{
+       // 布控子视图
+     [self.view layoutIfNeeded];
+
+        } completion:nil];
+}
+
+- (void)TanHui:(NSNotification *)noti{
+    {
+        // 把约束改成开始的 0
+        self.DiBuYueShu.constant = 0 ;
+        [UIView animateWithDuration:0.1 delay:0 options: UIViewAnimationOptionCurveEaseInOut  animations:^{
+    // 布控子视图
+    [self.view layoutIfNeeded];
+
+        } completion:nil];
+
+}
+}
 
 
 @end

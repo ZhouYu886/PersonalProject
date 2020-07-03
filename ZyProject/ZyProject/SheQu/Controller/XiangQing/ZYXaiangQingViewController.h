@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZYXaiangQingViewController : BaseViewController
 @property(nonatomic,strong)ZYSheQuM *SheQuM;
 //@property (nonatomic,strong) talkListModel *talkM;
+@property (nonatomic, copy)void (^didSureBtnBlock)(void);
+@property(nonatomic,strong)NSMutableArray *SQarray;
+@property(nonatomic,strong)NSMutableArray *XiangQingarray;
 
 
 @end

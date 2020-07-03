@@ -73,26 +73,6 @@
             NSLog(@"@");
         }];
 
-//    NSURL *url = [NSURL URLWithString:@"http://api.yysc.online/admin/getFinanceTalk?date=2020-05-23"];
-//       NSURLSession *session = [NSURLSession sharedSession];
-//       [[session dataTaskWithURL:url completionHandler:^(
-//       NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-    
-//           NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//           NSArray *arr = dict[@"data"];
-//           NSMutableArray *arrayM = [NSMutableArray array];
-//
-//
-//
-//        for (NSDictionary *smallDic in arr) {
-//               [arrayM addObject:[ZYKxM KuaiXM:smallDic]];
-////               [arrayM addObject:[ZYHangYeFengbao HangYeFengBao:smallDic]];
-//           }
-//           self.kxArray = arrayM;
-//           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//               [self.TableView reloadData];
-//           }];
-//       }]resume];
 }
 
 

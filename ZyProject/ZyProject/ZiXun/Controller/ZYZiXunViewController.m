@@ -15,6 +15,9 @@
 @interface ZYZiXunViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
 @property(nonatomic,strong)NSArray *ZiXunArray;
+@property(assign,nonatomic)int ZJSJ;
+@property(assign,nonatomic)int gg;
+
 @end
 
 @implementation ZYZiXunViewController
@@ -27,11 +30,13 @@
 
 - (void)viewDidLoad
 {
+    self.gg = 1;
+    self.ZJSJ = 1;
+    [self shuaxin];
     [super viewDidLoad];
     [self ZiXunJingXuna];
+    
     self.view.backgroundColor = UIColor.brownColor;
-    //控制器navigationController顶部是否显示
-//    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     //设置tableView分割线不显示
     self.TableView.separatorStyle = UITableViewCellSelectionStyleNone;
@@ -62,26 +67,48 @@
     
 }
 
--(void)ZiXunJingXuna{
-        NSDate *date=[NSDate date];
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        [manager GET:@"http://api.yysc.online/news/getNewListByProject.do?pageSize&pageNum&project" parameters:@{@"date":date,} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSDictionary *dada = responseObject[@"data"][@"list"];
-            
-            NSMutableArray *arrayN = [NSMutableArray array];
-            
-           for (NSDictionary *dict in dada) {
-            [arrayN addObject:[ZYZiXunJingXuanM  yy_modelWithDictionary:dict]];
-            }
-            
-            self.ZiXunArray = arrayN;
-            [self.TableView reloadData];
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"@");
-        }];
+-(void)ZiXunJingXuna{    
+     [LCPNetWorkManager getWithPathUrl:@"/news/getNewListByProject.do?project" parameters:@{@"pageNumber": @(self.gg),@"pageSize" :@(self.ZJSJ *10),
+     } queryParams:nil Header:nil success:^(BOOL success, id result) {
+
+        NSDictionary *dada = result[@"data"][@"list"];
+                   NSMutableArray *arrayN = [NSMutableArray array];
+                  for (NSDictionary *dict in dada) {
+                   [arrayN addObject:[ZYZiXunJingXuanM yy_modelWithDictionary:dict]];
+
+                   }
+                   self.ZiXunArray= arrayN;
+
+                   [self.TableView reloadData];
+
+     } failure:^(BOOL failuer, NSError *error) {
+
+     }];
     
+    
+    
+//        NSDate *date=[NSDate date];
+//        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//        [manager GET:@"http://api.yysc.online/news/getNewListByProject.do?pageSize&pageNum&project" parameters:@{@"date":date,} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            NSDictionary *dada = responseObject[@"data"][@"list"];
+//
+//            NSMutableArray *arrayN = [NSMutableArray array];
+//
+//           for (NSDictionary *dict in dada) {
+//            [arrayN addObject:[ZYZiXunJingXuanM  yy_modelWithDictionary:dict]];
+//            }
+//
+//            self.ZiXunArray = arrayN;
+//            [self.TableView reloadData];
+//
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            NSLog(@"@");
+//        }];
 }
+
+
+
+
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -126,5 +153,85 @@
     
     
 }
+
+
+- (void)shuaxin{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData:)];
+              // 设置文字
+              [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+              [header setTitle:@"即将刷新" forState:MJRefreshStatePulling];
+              [header setTitle:@"正在刷新 ..." forState:MJRefreshStateRefreshing];
+              
+              // 设置字体
+              header.stateLabel.font = [UIFont systemFontOfSize:15];
+              header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:14];
+
+              // 设置颜色
+              header.stateLabel.textColor = [UIColor whiteColor];
+              header.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
+
+              // 马上进入刷新状态
+        //      [header beginRefreshing];
+
+              // 设置刷新控件
+              self.TableView.mj_header = header;
+        
+    // 上拉加载
+        
+        MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData:)];
+          
+          // 设置文字
+          [footer setTitle:@"上拉加载" forState:MJRefreshStateIdle];
+          [footer setTitle:@"正在加载 ..." forState:MJRefreshStateRefreshing];
+          [footer setTitle:@"No more data" forState:MJRefreshStateNoMoreData];
+
+          // 设置字体
+          footer.stateLabel.font = [UIFont systemFontOfSize:15];
+
+          // 设置颜色
+          footer.stateLabel.textColor = [UIColor grayColor];
+
+          // 设置footer
+          self.TableView.mj_footer = footer;
+}
+
+-(void)loadMoreData:(MJRefreshAutoNormalFooter *)footer{
+    [footer beginRefreshing];
+    self.TableView.mj_footer.alpha = 1;
+    self.ZJSJ++;
+
+    int64_t delayInSeconds = 2.0;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+     [footer setTitle:@"加载成功" forState:MJRefreshStateIdle];
+      [self performSelector:@selector(delayMethod) withObject:nil afterDelay:1.0];
+     [footer endRefreshing];
+    });
+        [self ZiXunJingXuna];
+//        [self JsonTocaijin];
+
+}
+
+-(void)loadNewData:(MJRefreshNormalHeader *)header{
+    self.gg++;
+    self.ZJSJ = 1;
+    [self ZiXunJingXuna];
+//    [self JsonTocaijin];
+    
+    if (_ZiXunArray != nil && ![_ZiXunArray isKindOfClass:[NSNull class]] && _ZiXunArray.count != 0) {
+          [header setTitle:@"刷新成功" forState:MJRefreshStateRefreshing];
+          [header endRefreshing];
+          [self ZiXunJingXuna];
+        
+    }else{
+        [header setTitle:@"刷新失败" forState:MJRefreshStateRefreshing];
+        [header endRefreshing];
+    }
+
+}
+
+-(void)delayMethod{
+ self.TableView.mj_footer.alpha = 0.01;
+}
+
 
 @end

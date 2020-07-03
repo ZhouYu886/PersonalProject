@@ -9,9 +9,13 @@
 #import "AppDelegate.h"
 #import "ZYNavigationController.h"
 #import "ZyTabBarController.h"
+#import "ZYDengluViewController.h"
+#import "ZYMyViewController.h"
+#import "ViewController+CurrentVC.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
+@property (nonatomic, strong) ZyTabBarController *tabbarVC;
 
 @end
 
@@ -23,6 +27,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     ZyTabBarController *vc = [ZyTabBarController new];
+
 //    [vc.tabBar setBackgroundImage:[UIImage imageNamed:@"tab"]];
 //    vc.tabBarItem.image = [UIImage imageNamed:@"tab"];
 
@@ -32,9 +37,5 @@
     
     return YES;
 }
-
-
-
-
 
 @end

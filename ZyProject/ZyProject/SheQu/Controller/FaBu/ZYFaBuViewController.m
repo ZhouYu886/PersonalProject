@@ -80,29 +80,6 @@
                     //设置导航栏颜色
             self.navigationController.navigationBar.barTintColor = RGB(44, 48, 52);
 
-//    //设置左边返回
-//     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-////     [btn setImage:[UIImage imageNamed:@"ic_back"] forState:UIControlStateNormal];
-//    [btn setTitle:@"返回" forState:UIControlStateNormal];
-//     [btn addTarget:self action:@selector(leftClick) forControlEvents:UIControlEventTouchUpInside];
-//     //适应大小
-//     [btn sizeToFit];
-//     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-//
-//
-//      //设置右边发布
-//      UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-////      [btn1 setImage:[UIImage imageNamed:@"ic_share it_homepage"] forState:UIControlStateNormal];
-//    [btn1 setTitle:@"发表" forState:UIControlStateNormal];
-//      [btn1 addTarget:self action:@selector(rightClick) forControlEvents:UIControlEventTouchUpInside];
-//      //适应大小
-//      [btn sizeToFit];
-//      //设置右边rightBarButtonItem的自定义btn
-//      self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn1];
-    
-    
-    
-    
     // 通过运行时，发现UITextView有一个叫做“_placeHolderLabel”的私有变量
     unsigned int count = 0;
     Ivar *ivars = class_copyIvarList([UITextView class], &count);

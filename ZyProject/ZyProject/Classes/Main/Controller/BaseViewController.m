@@ -7,8 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "ZYDengluViewController.h"
+#import "ZyTabBarController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<UITabBarControllerDelegate>
+@property (nonatomic, strong) ZyTabBarController *tabbarVC;
 
 @end
 
@@ -19,14 +22,34 @@
     // Do any additional setup after loading the view.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    //这里我判断的是当前点击的tabBarItem的标题
+    if ([viewController.tabBarItem.title isEqualToString:@"社区"]) {
+        //如果用户ID存在的话，说明已登陆
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        if ([userDefault objectForKey:@"id"]) {
+            return YES;
+        }
+        else
+        {
+            //跳到登录页面
+            ZYDengluViewController *login = [[ZYDengluViewController alloc] init];
+          [((UINavigationController *)tabBarController.selectedViewController) presentViewController:login animated:YES completion:nil];
+            login.hidesBottomBarWhenPushed = YES;
+                       //在登陆界面判断登陆成功之后发送通知,将所选的TabbarItem传回,使用通知传值
+                        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(logSelect:) name:@"logSelect" object:nil];
+            return NO;
+        }
+    }
+    else
+        return YES;
 }
-*/
+
+- (void)logSelect:(NSNotification *)text
+{
+    _tabbarVC.selectedIndex = [text.userInfo[@"logSelect"] integerValue];
+    
+}
 
 @end

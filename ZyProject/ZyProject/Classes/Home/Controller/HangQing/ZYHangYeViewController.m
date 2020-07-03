@@ -20,6 +20,7 @@
 
 @property(nonatomic,strong)NSArray *HangYeFEngBaoArray;
 @property(assign,nonatomic)int ZJSJ;
+@property(assign,nonatomic)int gg;
 
 @end
 
@@ -40,6 +41,7 @@
     self.Tableview.delegate = self;
     self.Tableview.dataSource = self;
     self.ZJSJ = 1;
+    self.gg = 1;
          //设置导航栏颜色
              self.navigationController.navigationBar.barTintColor = RGB(47, 50, 55);
         //设置背景颜色
@@ -62,7 +64,7 @@
       
       
       AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-      [manager GET:@"http://api.yysc.online/admin/getFinanceTalk" parameters:@{@"date":date,@"pageSize":@(self.ZJSJ*10)} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+      [manager GET:@"http://api.yysc.online/admin/getFinanceTalk" parameters:@{ @"date":date,@"pageSize":@(self.ZJSJ*10)} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
           
           NSDictionary *dada = responseObject[@"data"];
           
@@ -168,6 +170,7 @@
 }
 
 -(void)loadNewData:(MJRefreshNormalHeader *)header{
+    self.gg++;
     [self tt];
 //    [self JsonTocaijin];
     

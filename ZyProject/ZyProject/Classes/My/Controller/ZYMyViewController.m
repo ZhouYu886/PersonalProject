@@ -20,6 +20,7 @@
 #import "ZYNameModel.h"
 #import "ZYGxQmModel.h"
 #import "ZYQieHuanZhangHaoViewController.h"
+#import "ZYXiuGaiMiMaViewController.h"
 
 
 
@@ -225,13 +226,9 @@
                 [userDefault removeObjectForKey:@"phone"];
                 [userDefault removeObjectForKey:@"id"];
                 [userDefault removeObjectForKey:@"password"];
-                
-                
                 if (self.didSureBtnBlock) {
                     self.didSureBtnBlock();
                 }
-                
-                
             }];
             //第3步:添加按钮
             [aletVC addAction:action1];
@@ -263,7 +260,8 @@
             
         }
         
-    }else if (indexPath.row == 4){        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    }else if (indexPath.row == 4){
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         if([userDefault objectForKey:@"id"]){
             ZYQieHuanZhangHaoViewController *PushuQhZh = [ZYQieHuanZhangHaoViewController new];
             PushuQhZh.hidesBottomBarWhenPushed = YES;
@@ -289,8 +287,34 @@
             [self presentViewController:aletVC animated:YES
                              completion:nil];
         }
-        
-        
+
+    }else if (indexPath.row == 3){
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        if([userDefault objectForKey:@"id"]){
+         ZYXiuGaiMiMaViewController *XiuGaiMiMa = [ZYXiuGaiMiMaViewController new];
+            XiuGaiMiMa.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:XiuGaiMiMa animated:YES];
+        }else{
+            UIAlertController *aletVC  = [UIAlertController alertControllerWithTitle:@"你还没有登录快去登录吧～" message:@"" preferredStyle:(UIAlertControllerStyleActionSheet)];
+            //第2步:创建按钮
+            UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+                //点击按钮执行的代码
+                
+                
+            }];
+            UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"立即登录" style:( UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                //点击按钮执行的代码
+                ZYDengluViewController *pushDL = [[ZYDengluViewController alloc]init];
+                pushDL.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:pushDL animated:YES];
+            }];
+            //第3步:添加按钮
+            [aletVC addAction:action1];
+            [aletVC addAction:action2];
+            //第4步:显示弹框（相当于show操作）
+            [self presentViewController:aletVC animated:YES
+                             completion:nil];
+        }
     }
     
 }
